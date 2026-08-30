@@ -1,0 +1,15 @@
+# Build output
+site/
+
+# OS
+.DS_Store
+
+# Claude Code session state
+.claude/
+
+# Legacy prototype — contains a hardcoded Cesium ion token, not the sanitized
+# public version. See docs/assets/cadastral-viewer.html for the safe copy.
+index-stage-office.html
+
+# Isolated backups / submodules / large binary assets — see CLAUDE.md
+archive/

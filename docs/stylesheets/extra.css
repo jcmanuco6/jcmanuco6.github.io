@@ -1,0 +1,82 @@
+/* ---- Hero ---- */
+.hero {
+  text-align: center;
+  padding: 4.5rem 1rem 3rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.hero .tagline {
+  font-size: 1.15rem;
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.hero .md-button {
+  margin: 0 0.4rem;
+}
+
+/* ---- Section rhythm ---- */
+.section {
+  margin: 4rem 0;
+}
+
+.section h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-bottom: none;
+  margin-bottom: 1.25rem;
+}
+
+/* ---- Skills chips ---- */
+.md-typeset ul.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 0;
+}
+
+.md-typeset ul.skills li {
+  list-style: none;
+  background: var(--md-code-bg-color);
+  border-radius: 2rem;
+  padding: 0.35rem 0.9rem;
+  margin: 0;
+  font-size: 0.85rem;
+  font-family: var(--md-code-font-family);
+}
+
+/* ---- Contact row ---- */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 1rem;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ---- Floating-panel card style (soft shadow, no hard border) ---- */
+.md-typeset .grid.cards > ul > li {
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18), 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
