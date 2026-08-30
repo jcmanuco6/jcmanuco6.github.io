@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <meta charset="utf-8">
+  <title>3D Cadastral Viewer</title>
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body, #cesiumContainer { width: 100%; height: 100%; overflow: hidden; }
+
+    #panel {
+      position: absolute; top: 12px; left: 12px; width: 260px;
+      background: rgba(10,15,30,0.92);
+      border: 1px solid rgba(100,180,255,0.25);
+      border-radius: 10px; padding: 14px; z-index: 999;
+      font-family: 'Space Grotesk', sans-serif; color: #e0e8f0;
+    }
+    #panel h2 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: #64b8ff;
+    }
+    #panel p.sub {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        color: #6b8fa8;
+        letter-spacing: 0.3px;
+    }
+    #info { font-size: 11px; line-height: 1.7; min-height: 80px;
+      background: rgba(255,255,255,0.05); border-radius: 6px; padding: 8px; }
+    #info em { color: #6b8fa8; font-style: italic; }
+    .attr-label {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 500;
+        font-size: 11px;
+        color: #90caf9;
+    }
+    .attr-val {
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: 400;
+        font-size: 11px;
+        color: #e8f4fd;
+    }
+    #controls {
+      position: absolute; top: 12px; right: 12px;
+      display: flex; flex-direction: column; gap: 6px; z-index: 999;
+    }
+    .ctrl-btn {
+      background: rgba(10,15,30,0.88); border: 1px solid rgba(100,180,255,0.3);
+      color: #90caf9; padding: 6px 12px; border-radius: 6px;
+      font-size: 11px; cursor: pointer;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500; letter-spacing: 0.2px;
+    }
+    .ctrl-btn.active {
+        background: rgba(100,180,255,0.25);
+        color: #fff; }
+    #footer {
+      position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+      font-size: 10px; color: rgba(150,180,210,0.6);
+      font-family: 'JetBrains Mono', monospace; z-index: 999;
+      background: rgba(0,0,0,0.4); padding: 3px 10px; border-radius: 4px;
+    }
+    #token-gate {
+      position: absolute; inset: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: center;
+      background: #0a0f1e; color: #e0e8f0; font-family: 'Space Grotesk', sans-serif;
+      text-align: center; padding: 2rem;
+    }
+    #token-gate a { color: #64b8ff; }
+  </style>
+</head>
+<body>
+<div id="cesiumContainer"></div>
+
+<div id="panel">
+  <h2>🏙 3D CADASTRAL VIEWER</h2>
+  <p class="sub">CityJSON → FME → 3D Tiles → CesiumJS</p>
+  <div id="info"><em>Click a building to inspect attributes</em></div>
+</div>
+<div id="controls">
+  <button class="ctrl-btn active" id="btn-height" onclick="styleByHeight()">Color by Height</button>
+  <button class="ctrl-btn" id="btn-year" onclick="styleByYear()">Color by Year Built</button>
+  <button class="ctrl-btn" id="btn-reset" onclick="resetStyle()">Reset Style</button>
+</div>
+<div id="footer">CityJSON LOD 1.0 · EPSG:6634 → WGS84 · FME</div>
+
+<script>
+// Token is read from the URL (?token=) or window.CESIUM_ION_TOKEN — never hardcoded here.
+// Create a token scoped to this asset ID only (Cesium ion → Access Tokens → restrict by
+// asset) before publishing; a scoped client-side token is the supported pattern for
+// CesiumJS demos, unlike a server secret.
+const params = new URLSearchParams(window.location.search);
+const ION_TOKEN = params.get('token') || window.CESIUM_ION_TOKEN || '';
+const ASSET_ID  =  5163049;
+
+if (!ION_TOKEN) {
+  document.getElementById('cesiumContainer').style.display = 'none';
+  const gate = document.createElement('div');
+  gate.id = 'token-gate';
+  gate.innerHTML = '<div>No Cesium ion token provided.<br><br>' +
+    'Append <code>?token=YOUR_SCOPED_TOKEN</code> to this page\'s URL, or set ' +
+    '<code>window.CESIUM_ION_TOKEN</code> before this script runs.</div>';
+  document.body.appendChild(gate);
+} else {
+  Cesium.Ion.defaultAccessToken = ION_TOKEN;
+  const viewer = new Cesium.Viewer('cesiumContainer', {
+    terrain: Cesium.Terrain.fromWorldTerrain(),
+    baseLayerPicker: false, geocoder: false, homeButton: false,
+    sceneModePicker: false, navigationHelpButton: false,
+    animation: false, timeline: false, fullscreenButton: false,
+    infoBox: false, selectionIndicator: false,
+  });
+
+  let tileset;
+  (async () => {
+    try {
+      tileset = await Cesium.Cesium3DTileset.fromIonAssetId(ASSET_ID);
+      viewer.scene.primitives.add(tileset);
+      await viewer.zoomTo(tileset);
+      styleByHeight();
+    } catch (err) {
+      document.getElementById('info').innerHTML =
+        `<span style="color:#ef5350">❌ ${err.message}</span>`;
+    }
+  })();
+
+  window.styleByHeight = function () {
+    if (!tileset) return;
+    tileset.style = new Cesium.Cesium3DTileStyle({
+      color: { conditions: [
+        ["Number(${height_m}) >= 30", 'color("#e63946", 1.0)'],
+        ["Number(${height_m}) >= 20", 'color("#fdbf0e", 1.0)'],
+        ["Number(${height_m}) >= 12", 'color("#f7e9d3", 1.0)'],
+        ["Number(${height_m}) >= 6", 'color("#bc6b85", 1.0)'],
+        ["Number(${height_m}) > 0",   'color("#82b2b0", 1.0)'],
+        ["true",                      'color("#FFFFFF", 1.0)']
+      ]},
+    });
+    setActive('btn-height');
+  };
+
+  window.styleByYear = function () {
+    if (!tileset) return;
+    tileset.style = new Cesium.Cesium3DTileStyle({
+      color: {
+        conditions: [
+          ["Number(${yrblt}) >= 2000", "color('#A1EF9B', 1.0)"],
+          ["Number(${yrblt}) >= 1980", "color('#6BE5E8', 1.0)"],
+          ["Number(${yrblt}) >= 1960", "color('#FF9F7C', 1.0)"],
+          ["Number(${yrblt}) > 0",     "color('#FF6B8B', 1.0)"],
+          ["true",                     "color('#FFFFFF', 0.25)"]
+        ]
+      }
+    });
+    setActive('btn-year');
+  };
+
+  window.resetStyle = function () {
+    if (!tileset) return;
+    tileset.style = new Cesium.Cesium3DTileStyle({
+      color: 'color("cornflowerblue", 0.85)',
+    });
+    setActive('btn-reset');
+  };
+
+  function setActive(id) {
+    ['btn-height','btn-year','btn-reset'].forEach(b =>
+      document.getElementById(b).classList.toggle('active', b === id));
+  }
+
+  const handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+  handler.setInputAction(click => {
+    const picked = viewer.scene.pick(click.position);
+    const panel  = document.getElementById('info');
+    if (!panel) return;
+
+    if (!Cesium.defined(picked) || !(picked instanceof Cesium.Cesium3DTileFeature)) {
+      panel.innerHTML = '<em>Click a building to inspect attributes</em>';
+      return;
+    }
+    const f   = picked;
+    const get = k => f.getProperty(k) ?? '—';
+
+    const rows = [
+      ['Parcel ID',    get('parid')],
+      ['Master Parcel ID',    get('master_parid')],
+      ['Height Meters',       get('height_m') !== '—' ? get('height_m') + ' m' : '—'],
+      ['Ground Level', get('ground_z_m') !== '—' ? get('ground_z_m') + ' m' : '—'],
+      ['Year Built',   get('yrblt')],
+      ['Total Units',  get('total_units')],
+      ['Centroid X',   get('centroid_x')],
+      ['Centroid Y',   get('centroid_y')],
+      ['Source',       get('height_source')]
+    ];
+    panel.innerHTML = rows
+      .map(([k,v]) => `<span class="attr-label">${k}:</span> <span class="attr-val">${v}</span><br>`)
+      .join('');
+  }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+  handler.setInputAction(() => {
+    styleByHeight();
+    const panel = document.getElementById('info');
+    if (panel) panel.innerHTML = '<em>Click a building to inspect attributes</em>';
+  }, Cesium.ScreenSpaceEventType.RIGHT_CLICK);
+}
+</script>
+</body>
+</html>
