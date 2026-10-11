@@ -1,0 +1,29 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-156.69037, 20.94858]
+      },
+      "properties": {
+        "parid": "44001098",
+        "type": "TIME SHARE",
+        "yearBuilt": "1988"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-156.6920834537861, 20.945932333635913], [-156.6916329580644, 20.94742699293833], [-156.690, 20.946]]]
+      },
+      "properties": {
+        "parid": "44001098",
+        "title": "TIME SHARE",
+        "Year Built": "1988"
+      }
+    }
+  ]
+}

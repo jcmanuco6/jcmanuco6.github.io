@@ -1,0 +1,265 @@
+// =====================================================================
+// LADM 3D Warehouse — DuckDB
+// ISO 19152 Land Administration Domain Model, 3D cadastral extension
+// Source: ladm3d_warehouse.db (DuckDB v1.5.5)
+// =====================================================================
+
+Project ladm3d_warehouse {
+  database_type: 'PostgreSQL'
+  Note: '''
+    3D cadastral warehouse implementing ISO 19152 (LADM).
+    Pipeline: CityJSON (EPSG:6634) -> cjio reproject -> FME 2026.1
+              -> DuckDB warehouse -> OGC 3D Tiles v1.1 -> CesiumJS
+
+    Party, RRR, and valuation records are joined to legal space through
+    la_baunit, which is the single administrative anchor for the model.
+  '''
+}
+
+// ---------------------------------------------------------------------
+// LADM code lists (ISO 19152 Annex J)
+// ---------------------------------------------------------------------
+
+Enum la_right_type {
+  ownership
+  lease
+  tenancy
+  occupation
+  usufruct
+  easement
+  customary
+}
+
+Enum la_restriction_type {
+  mortgage
+  servitude
+  monument
+  no_build_zone
+  setback
+  covenant
+}
+
+Enum la_responsibility_type {
+  maintain_road
+  maintain_drainage
+  monument_upkeep
+  environmental
+}
+
+Enum la_party_type {
+  natural_person
+  non_natural_person
+  group_party
+  baunit
+}
+
+Enum la_legal_class {
+  fee_simple
+  condominium_unit
+  common_element
+  leasehold
+  easement_area
+}
+
+// ---------------------------------------------------------------------
+// LA_BAUnit — basic administrative unit (the hub)
+// ---------------------------------------------------------------------
+
+Table la_baunit {
+  parid            varchar  [pk, note: 'Parcel ID — administrative key']
+  tmk              varchar  [not null, unique, note: 'Tax Map Key']
+  feature_id       varchar  [note: 'Source CityJSON feature ID (ETL lineage)']
+  parid_all        varchar  [note: 'Pipe-delimited list of parcels on shared footprint']
+  parid_all_count  bigint   [default: 1, note: 'Cardinality of parid_all']
+  footprint_id     bigint   [note: 'Source footprint ID (ETL lineage)']
+  join_key_fp      varchar  [note: 'FME join key, footprint to parcel']
+  object_type      varchar
+  legal_class_code bigint
+  legal_class_desc la_legal_class
+  taxyr            bigint   [not null]
+
+  indexes {
+    tmk
+    footprint_id
+    (taxyr, parid)
+  }
+
+  Note: 'ISO 19152 LA_BAUnit. One row per legally distinct parcel.'
+}
+
+// ---------------------------------------------------------------------
+// LA_LegalSpaceBuildingUnit — 3D building geometry
+// ---------------------------------------------------------------------
+
+Table la_legalspace_buildingunit {
+  unit_id          varchar   [pk]
+  unitno           varchar   [note: 'Unit number within building']
+  vertical_order   bigint    [note: 'Stacking order for condominium units']
+
+  geometry_lod0    geometry  [note: 'LoD 0 footprint — WKB, EPSG:4326']
+  geometry_lod2_2  geometry  [note: 'LoD 2.2 solid — WKB, EPSG:4326']
+  bbox             geometry  [note: 'Envelope, for tile culling']
+
+  centroid_x       double
+  centroid_y       double
+  baseelev         double    [note: 'Ground elevation, m']
+  height_m         double
+  start_z          double    [note: 'Base of legal volume, m']
+  end_z            double    [note: 'Top of legal volume, m']
+  volume           double    [note: 'Legal volume, m3']
+  area_sqm         double
+
+  roofdir          varchar
+  roofform         varchar
+
+  rf_volume_lod22  double    [note: 'Reconstruction: LoD 2.2 volume, m3']
+  rf_roof_type     varchar   [note: 'Reconstruction: roof classification']
+  rf_rmse_lod22    double    [note: 'Reconstruction: RMSE vs point cloud, m']
+  rf_pt_density    double    [note: 'Reconstruction: point density, pts/m2']
+
+  indexes {
+    (centroid_x, centroid_y)
+    vertical_order
+  }
+
+  Note: '''
+    ISO 19152 LA_LegalSpaceBuildingUnit.
+    rf_* columns carry 3D reconstruction quality metrics and should travel
+    with the tileset so downstream users can filter on accuracy.
+  '''
+}
+
+// ---------------------------------------------------------------------
+// Junction — parcels to legal spaces (many-to-many)
+// ---------------------------------------------------------------------
+
+Table la_baunit_legalspace {
+  parid    varchar  [not null]
+  unit_id  varchar  [not null]
+
+  indexes {
+    (parid, unit_id) [pk]
+    unit_id
+  }
+
+  Note: 'A parcel may hold many units; a unit may span parcels.'
+}
+
+// ---------------------------------------------------------------------
+// LA_Party
+// ---------------------------------------------------------------------
+
+Table la_party {
+  party_id      uuid          [pk, default: `gen_random_uuid()`]
+  name          varchar       [not null]
+  type          la_party_type [not null]
+  contact_info  varchar
+  is_mock       boolean       [not null, default: true, note: 'Synthetic record — must be false before production use']
+
+  indexes {
+    type
+    is_mock
+  }
+}
+
+// ---------------------------------------------------------------------
+// LA_RRR — rights, restrictions, responsibilities
+// ---------------------------------------------------------------------
+
+Table la_rrr {
+  rrr_id              uuid  [pk, default: `gen_random_uuid()`]
+  party_id            uuid  [not null]
+  parid               varchar [not null]
+  right_type          la_right_type
+  restriction_type    la_restriction_type
+  responsibility_type la_responsibility_type
+
+  indexes {
+    party_id
+    parid
+  }
+
+  Note: '''
+    LADM models LA_Right, LA_Restriction, and LA_Responsibility as three
+    subclasses of LA_RRR. This table flattens them, so exactly one of the
+    three type columns should be populated per row. Enforce with a CHECK
+    constraint — DBML cannot express it:
+
+      CHECK (num_nonnulls(right_type, restriction_type, responsibility_type) = 1)
+  '''
+}
+
+// ---------------------------------------------------------------------
+// LA_Valuation — CAMA attributes (non-LADM extension)
+// ---------------------------------------------------------------------
+
+Table la_valuation {
+  appraisal_id      varchar  [pk]
+  parid             varchar  [not null]
+  taxyr             bigint   [not null]
+
+  cama_match_status varchar  [note: 'Join outcome: matched / unmatched / ambiguous']
+  cama_unit_count   bigint   [note: 'CAMA units on parcel — reconcile against 3D unit count']
+
+  yrblt             bigint
+  style             varchar
+  grade             bigint
+  cond              bigint
+  condolvl          bigint
+  condotyp          varchar
+  condovw           varchar
+  cndcmplx          varchar
+  extwall           bigint
+
+  sfla              double   [note: 'Square feet living area']
+  sqft              double
+  flr1area          double
+  flr1area_sqm      double   [note: 'Derived: flr1area * 0.092903']
+  stories           double
+  floorcount        varchar
+
+  rmbed             double
+  rmfam             varchar
+  ac                varchar
+  attic             bigint
+  ceiling           varchar
+  fixbath           double
+  fixhalf           varchar
+  wbfp_o            varchar  [note: 'Wood-burning fireplace, open']
+  wbfp_pf           varchar  [note: 'Wood-burning fireplace, prefab']
+  cur               varchar  [note: 'Current record flag']
+
+  indexes {
+    (parid, taxyr) [unique]
+    cama_match_status
+  }
+
+  Note: 'One appraisal per parcel per tax year.'
+}
+
+// ---------------------------------------------------------------------
+// Relationships
+// ---------------------------------------------------------------------
+
+Ref: la_baunit_legalspace.parid > la_baunit.parid [delete: cascade]
+Ref: la_baunit_legalspace.unit_id > la_legalspace_buildingunit.unit_id [delete: cascade]
+Ref: la_rrr.parid > la_baunit.parid [delete: cascade]
+Ref: la_rrr.party_id > la_party.party_id [delete: restrict]
+Ref: la_valuation.parid > la_baunit.parid [delete: cascade]
+
+// ---------------------------------------------------------------------
+
+TableGroup legal_space {
+  la_legalspace_buildingunit
+  la_baunit_legalspace
+}
+
+TableGroup administrative {
+  la_baunit
+  la_rrr
+  la_party
+}
+
+TableGroup valuation {
+  la_valuation
+}
