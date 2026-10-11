@@ -913,26 +913,39 @@
 
   <h1>Interactive Analytics Map</h1>
 
-<!-- TODO stub — fill in with a real project, then remove this comment.
-     Suggested angle ("Analytics & Maps"): interactive map embed, spatial queries,
-     raster/vector processing notebooks, clear visual outputs. -->
-
 <h2 id="at-a-glance">At a Glance</h2>
-<p>[PLACEHOLDER — fill in before publishing]</p>
+<p>Spatial SQL-driven analytics for utility infrastructure annexation planning and coverage gap analysis. Role: GIS analyst. <code>PostGIS</code> <code>Spatial SQL</code> <code>ArcGIS</code> <code>Network Analysis</code></p>
 <h2 id="problem">Problem</h2>
-<p>[PLACEHOLDER — fill in before publishing]</p>
+<p>Municipal planners needed to assess water and wastewater network coverage before approving service area expansions. No existing spatial analysis existed for feasibility or gap identification.</p>
 <h2 id="data">Data</h2>
 <ul>
-<li>[PLACEHOLDER — fill in before publishing]</li>
+<li>Water and wastewater pipeline data</li>
+<li>Material types</li>
+<li>Spatial network data</li>
+<li>CRS: [PLACEHOLDER]</li>
+<li>Record count: [PLACEHOLDER]</li>
 </ul>
 <h2 id="pipeline">Pipeline</h2>
-<p>[PLACEHOLDER — fill in before publishing]</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>graph LR
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    A[Pipeline data extraction via spatial SQL] --&gt; B[Material type assessment]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    B --&gt; C[Network accessibility analysis]
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    C --&gt; D[Coverage gap identification]
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    D --&gt; E[Map series output]
+</span></code></pre></div>
+<ol>
+<li>Extracted pipeline data via spatial SQL</li>
+<li>Assessed material types</li>
+<li>Ran network accessibility analysis</li>
+<li>Identified coverage gaps and feasibility of utility extensions</li>
+<li>Delivered map series output</li>
+</ol>
 <h2 id="result">Result</h2>
 <ul>
-<li>[PLACEHOLDER — fill in before publishing]</li>
+<li>[PLACEHOLDER] Delivered GIS-driven map series supporting interdepartmental coordination and annexation decisions (Utilities Annexation Study Area project)</li>
+<li>[PLACEHOLDER] Also developed a USGS Earthquake Hazards Program (EHP) earthquake visualization for Puerto Rico, enhancing monitoring, research, and preparedness</li>
 </ul>
 <h2 id="what-id-do-next">What I'd Do Next</h2>
-<p>[PLACEHOLDER — fill in before publishing]</p>
+<p>Automate the gap analysis as a scheduled web map, eliminating the static map series update cycle.</p>
 <h2 id="links">Links</h2>
 <ul>
 <li><a href="">Live viewer</a></li>

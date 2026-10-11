@@ -913,30 +913,56 @@
 
   <h1>Reality Capture Workflow</h1>
 
-<!-- TODO stub — fill in with a real project, then remove this comment.
-     Suggested angle ("3D & Reality Capture"): LiDAR point cloud workflows, mesh
-     rendering, building footprint extraction, photogrammetry outputs, web-ready
-     3D Tilesets. -->
-
 <h2 id="at-a-glance">At a Glance</h2>
-<p>[PLACEHOLDER — fill in before publishing]</p>
+<p>UAV imagery processing and LiDAR analysis for coastal land cover classification and 3D terrain modeling. Role: geospatial analyst. <code>UAV</code> <code>Drone</code> <code>LiDAR</code> <code>PDAL</code> <code>DEM</code> <code>ArcGIS</code></p>
 <h2 id="problem">Problem</h2>
-<p>[PLACEHOLDER — fill in before publishing]</p>
+<p>Local government needed spatial evidence of anthropogenic activity and recreation pressure in Puerto Rico's coastal zone to support planning and resource preservation decisions.</p>
 <h2 id="data">Data</h2>
 <ul>
-<li>[PLACEHOLDER — fill in before publishing]</li>
+<li>UAV imagery and aerial photography</li>
+<li>LiDAR point clouds</li>
+<li>Digital Elevation Models (DEMs)</li>
+<li>Coverage: Puerto Rico maritime terrestrial zone</li>
+<li>CRS: [PLACEHOLDER]</li>
+<li>Record count: [PLACEHOLDER]</li>
 </ul>
 <h2 id="pipeline">Pipeline</h2>
-<p>[PLACEHOLDER — fill in before publishing]</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>graph LR
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    A1[UAV flight] --&gt; A2[Imagery processing]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    A2 --&gt; A3[Land cover / land use classification]
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    A3 --&gt; A4[Coastal zone analysis]
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    A4 --&gt; A5[Planning deliverables]
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    B1[LiDAR point cloud] --&gt; B2[DEM]
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    B2 --&gt; B3[Terrain models]
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    B3 --&gt; B4[Elevation profiles]
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    B4 --&gt; B5[Volumetric assessments]
+</span></code></pre></div>
+<p><strong>UAV / land cover track:</strong></p>
+<ol>
+<li>UAV flight</li>
+<li>Imagery processing</li>
+<li>Land cover/land use classification</li>
+<li>Coastal zone analysis</li>
+<li>Planning deliverables</li>
+</ol>
+<p><strong>LiDAR / terrain track:</strong></p>
+<ol>
+<li>LiDAR point cloud</li>
+<li>DEM</li>
+<li>Terrain models</li>
+<li>Elevation profiles</li>
+<li>Volumetric assessments</li>
+</ol>
 <h2 id="result">Result</h2>
 <ul>
-<li>[PLACEHOLDER — fill in before publishing]</li>
+<li>[PLACEHOLDER] Geospatial analysis supporting local government planning processes and coastal resource preservation</li>
+<li>[PLACEHOLDER] Detailed topographic models and volumetric assessments for urban planning and environmental monitoring</li>
 </ul>
 <h2 id="what-id-do-next">What I'd Do Next</h2>
-<p>[PLACEHOLDER — fill in before publishing]</p>
+<p>Publish processed point clouds as COPC on S3 and stream directly into a CesiumJS viewer for browser-based coastal change monitoring without GIS software.</p>
 <h2 id="links">Links</h2>
 <ul>
-<li><a href="">Live viewer</a></li>
+<li><a href="https://storymaps.arcgis.com/stories/d25ee620cdfe4e52853f89161dc8d1b5">Story Map</a></li>
 <li><a href="">Repo</a></li>
 <li><a href="">README</a></li>
 </ul>

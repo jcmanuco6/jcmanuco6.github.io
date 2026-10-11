@@ -913,27 +913,41 @@
 
   <h1>Spatial ETL Pipeline</h1>
 
-<!-- TODO stub — fill in with a real project, then remove this comment.
-     Suggested angle (from docs/ideas-inspiration/design-ideas.md, "Data Pipelines &
-     Engineering"): automated batch geoprocessing, PostGIS optimization, API
-     integrations, cloud storage conversions (GeoParquet, 3D Tiles). -->
-
 <h2 id="at-a-glance">At a Glance</h2>
-<p>[PLACEHOLDER — fill in before publishing]</p>
+<p>Containerized spatial ETL pipeline automating field inspection data from API to ArcGIS Online hosted feature services; designed and developed. <code>Python</code> <code>GeoPandas</code> <code>ArcGIS Online</code> <code>Docker</code></p>
 <h2 id="problem">Problem</h2>
-<p>[PLACEHOLDER — fill in before publishing]</p>
+<p>Stakeholders needed real-time visibility into field inspections. Manual data handling caused delays, duplicates, and no spatial context for resource allocation decisions.</p>
 <h2 id="data">Data</h2>
 <ul>
-<li>[PLACEHOLDER — fill in before publishing]</li>
+<li>Internal API source</li>
+<li>Geocoded point features</li>
+<li>CRS: [CRS — PLACEHOLDER]</li>
+<li>Record count: [record count — PLACEHOLDER]</li>
 </ul>
 <h2 id="pipeline">Pipeline</h2>
-<p>[PLACEHOLDER — fill in before publishing]</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>graph LR
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    A[API extraction] --&gt; B[Geocoding]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    B --&gt; C[Validation + duplicate resolution]
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    C --&gt; D[GeoDataFrame]
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    D --&gt; E[ArcGIS Online hosted feature service]
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    E --&gt; F[Interactive dashboard]
+</span></code></pre></div>
+<ol>
+<li>API extraction</li>
+<li>Geocoding</li>
+<li>Validation and duplicate resolution</li>
+<li>Transformed into GeoDataFrames</li>
+<li>Published as ArcGIS Online hosted feature services (cloud storage, scheduled updates)</li>
+<li>Powers an interactive dashboard for real-time geospatial visualization</li>
+</ol>
 <h2 id="result">Result</h2>
 <ul>
-<li>[PLACEHOLDER — fill in before publishing]</li>
+<li>[PLACEHOLDER] Automated end-to-end pipeline with scheduled updates</li>
+<li>[PLACEHOLDER] Interactive dashboard for real-time geospatial visualization, enabling stakeholders to monitor field inspections and optimize resource allocation</li>
+<li>[record count — PLACEHOLDER]</li>
 </ul>
 <h2 id="what-id-do-next">What I'd Do Next</h2>
-<p>[PLACEHOLDER — fill in before publishing]</p>
+<p>Replace ArcGIS Online dependency with a PostGIS backend and open-source dashboard for full infrastructure control.</p>
 <h2 id="links">Links</h2>
 <ul>
 <li><a href="">Live viewer</a></li>

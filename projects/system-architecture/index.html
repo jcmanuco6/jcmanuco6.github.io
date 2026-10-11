@@ -913,30 +913,40 @@
 
   <h1>System Architecture</h1>
 
-<!-- TODO stub — fill in with a real project, then remove this comment.
-     Suggested angle ("System Architecture"): high-level data flow diagrams
-     (Mermaid.js supported via pymdownx.superfences), CLI tools, database schema
-     blueprints, technical documentation. -->
-
 <h2 id="at-a-glance">At a Glance</h2>
-<p>[PLACEHOLDER — fill in before publishing]</p>
+<p>High-availability ArcGIS Enterprise Portal deployment for Puerto Rico's municipal cadastral data platform. Role: implementation and configuration. <code>ArcGIS Enterprise Portal</code> <code>High Availability Architecture</code></p>
 <h2 id="problem">Problem</h2>
-<p>[PLACEHOLDER — fill in before publishing]</p>
+<p>CRIM needed a public-facing portal to serve authoritative cadastral data for all Puerto Rico municipalities — aerial photos, cadastral maps, boundary lists — with purchase and download capability.</p>
 <h2 id="data">Data</h2>
 <ul>
-<li>[PLACEHOLDER — fill in before publishing]</li>
+<li>Cadastral data for Puerto Rico, island-wide</li>
+<li>Aerial photography</li>
+<li>Boundary datasets</li>
+<li>Record count: [PLACEHOLDER]</li>
 </ul>
 <h2 id="pipeline">Pipeline</h2>
-<p>[PLACEHOLDER — fill in before publishing]</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>graph LR
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    A[Requirements gathering] --&gt; B[Enterprise Portal configuration]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    B --&gt; C[High availability architecture setup]
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    C --&gt; D[Cadastral data publication]
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    D --&gt; E[Public portal launch]
+</span></code></pre></div>
+<ol>
+<li>Requirements gathering</li>
+<li>Enterprise Portal configuration</li>
+<li>High availability architecture setup</li>
+<li>Cadastral data publication</li>
+<li>Public portal launch</li>
+</ol>
 <h2 id="result">Result</h2>
 <ul>
-<li>[PLACEHOLDER — fill in before publishing]</li>
+<li>[PLACEHOLDER] Live portal serving island-wide cadastral data with browse, purchase, and download capability</li>
 </ul>
 <h2 id="what-id-do-next">What I'd Do Next</h2>
-<p>[PLACEHOLDER — fill in before publishing]</p>
+<p>Add an OGC API — Features endpoint to expose cadastral data as open standards-compliant JSON without requiring portal authentication.</p>
 <h2 id="links">Links</h2>
 <ul>
-<li><a href="">Live viewer</a></li>
+<li><a href="https://catastro.crimpr.net/cdprpc/">Live portal</a></li>
 <li><a href="">Repo</a></li>
 <li><a href="">README</a></li>
 </ul>
