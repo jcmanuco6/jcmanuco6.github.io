@@ -3,37 +3,47 @@ hide:
   - navigation
 ---
 
-<!-- TODO stub — fill in with a real project, then remove this comment.
-     Suggested angle ("System Architecture"): high-level data flow diagrams
-     (Mermaid.js supported via pymdownx.superfences), CLI tools, database schema
-     blueprints, technical documentation. -->
-
 ## At a Glance
 
-[PLACEHOLDER — fill in before publishing]
+High-availability ArcGIS Enterprise Portal deployment for Puerto Rico's municipal cadastral data platform. Role: implementation and configuration. `ArcGIS Enterprise Portal` `High Availability Architecture`
 
 ## Problem
 
-[PLACEHOLDER — fill in before publishing]
+CRIM needed a public-facing portal to serve authoritative cadastral data for all Puerto Rico municipalities — aerial photos, cadastral maps, boundary lists — with purchase and download capability.
 
 ## Data
 
-- [PLACEHOLDER — fill in before publishing]
+- Cadastral data for Puerto Rico, island-wide
+- Aerial photography
+- Boundary datasets
+- Record count: [PLACEHOLDER]
 
 ## Pipeline
 
-[PLACEHOLDER — fill in before publishing]
+```mermaid
+graph LR
+    A[Requirements gathering] --> B[Enterprise Portal configuration]
+    B --> C[High availability architecture setup]
+    C --> D[Cadastral data publication]
+    D --> E[Public portal launch]
+```
+
+1. Requirements gathering
+2. Enterprise Portal configuration
+3. High availability architecture setup
+4. Cadastral data publication
+5. Public portal launch
 
 ## Result
 
-- [PLACEHOLDER — fill in before publishing]
+- [PLACEHOLDER] Live portal serving island-wide cadastral data with browse, purchase, and download capability
 
 ## What I'd Do Next
 
-[PLACEHOLDER — fill in before publishing]
+Add an OGC API — Features endpoint to expose cadastral data as open standards-compliant JSON without requiring portal authentication.
 
 ## Links
 
-- [Live viewer]()
+- [Live portal](https://catastro.crimpr.net/cdprpc/)
 - [Repo]()
 - [README]()

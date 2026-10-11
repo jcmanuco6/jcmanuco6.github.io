@@ -3,34 +3,48 @@ hide:
   - navigation
 ---
 
-<!-- TODO stub — fill in with a real project, then remove this comment.
-     Suggested angle (from docs/ideas-inspiration/design-ideas.md, "Data Pipelines &
-     Engineering"): automated batch geoprocessing, PostGIS optimization, API
-     integrations, cloud storage conversions (GeoParquet, 3D Tiles). -->
-
 ## At a Glance
 
-[PLACEHOLDER — fill in before publishing]
+Containerized spatial ETL pipeline automating field inspection data from API to ArcGIS Online hosted feature services; designed and developed. `Python` `GeoPandas` `ArcGIS Online` `Docker`
 
 ## Problem
 
-[PLACEHOLDER — fill in before publishing]
+Stakeholders needed real-time visibility into field inspections. Manual data handling caused delays, duplicates, and no spatial context for resource allocation decisions.
 
 ## Data
 
-- [PLACEHOLDER — fill in before publishing]
+- Internal API source
+- Geocoded point features
+- CRS: [CRS — PLACEHOLDER]
+- Record count: [record count — PLACEHOLDER]
 
 ## Pipeline
 
-[PLACEHOLDER — fill in before publishing]
+```mermaid
+graph LR
+    A[API extraction] --> B[Geocoding]
+    B --> C[Validation + duplicate resolution]
+    C --> D[GeoDataFrame]
+    D --> E[ArcGIS Online hosted feature service]
+    E --> F[Interactive dashboard]
+```
+
+1. API extraction
+2. Geocoding
+3. Validation and duplicate resolution
+4. Transformed into GeoDataFrames
+5. Published as ArcGIS Online hosted feature services (cloud storage, scheduled updates)
+6. Powers an interactive dashboard for real-time geospatial visualization
 
 ## Result
 
-- [PLACEHOLDER — fill in before publishing]
+- [PLACEHOLDER] Automated end-to-end pipeline with scheduled updates
+- [PLACEHOLDER] Interactive dashboard for real-time geospatial visualization, enabling stakeholders to monitor field inspections and optimize resource allocation
+- [record count — PLACEHOLDER]
 
 ## What I'd Do Next
 
-[PLACEHOLDER — fill in before publishing]
+Replace ArcGIS Online dependency with a PostGIS backend and open-source dashboard for full infrastructure control.
 
 ## Links
 
