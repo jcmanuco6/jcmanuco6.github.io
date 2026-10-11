@@ -63,6 +63,9 @@ graph LR
     asset ID in the [Cesium ion dashboard](https://ion.cesium.com/tokens) is not
     a server secret.
 
+<iframe src="/projects/cadastral-demo/" width="100%" height="600"
+        style="border:0;border-radius:8px;"></iframe>
+
 ## What I'd Do Next
 
 [PLACEHOLDER — fill in before publishing]
