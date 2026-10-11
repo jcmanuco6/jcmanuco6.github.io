@@ -43,6 +43,8 @@ nav:
       - Interactive Analytics Map: projects/analytics-map.md
       - System Architecture: projects/system-architecture.md
       - Reality Capture Workflow: projects/reality-capture.md
+  - Demos:
+      - CesiumJS Bootcamp Viewer: demos/cesium-session1/index.html
   - Resume: cv/Joan_Colon_Resume_26-08-29.pdf
 
 markdown_extensions:

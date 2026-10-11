@@ -2,37 +2,38 @@
 hide:
   - navigation
 ---
-# 3D Cadastral Pipeline
 
-**CityJSON → FME → OGC 3D Tiles → CesiumJS**
+## At a Glance
+
+3D CityJSON building dataset transformed into a web-browsable digital twin; [PLACEHOLDER — fill in before publishing] `CityJSON` `FME` `OGC 3D Tiles` `CesiumJS`.
 
 ## Problem
 
-<!-- TODO: one paragraph — who needed this and what they couldn't do before it existed.
-     e.g. "County assessor's office needed to visually audit building height and
-     year-built data across N parcels without opening individual CAD/GIS files." -->
+[PLACEHOLDER — fill in before publishing]
 
-## Data source
+## Data
 
-- Building geometry: CityJSON LOD1 <!-- TODO: source (county open data portal, LiDAR-derived, etc.) -->
-- Attributes: parcel ID, master parcel ID, height (m), ground elevation (m), year built,
-  total units, centroid X/Y, height source
-- Projection: EPSG:6634 → reprojected to WGS84 for the web viewer
+- Building geometry: CityJSON LOD1 (source: [PLACEHOLDER — fill in before publishing])
+- Attributes: parcel ID, master parcel ID, height (m), ground elevation (m), year built, total units, centroid X/Y, height source
+- Projection: EPSG:6634, reprojected to WGS84 for the web viewer
 
 ## Pipeline
+
+```mermaid
+graph LR
+    A[CityJSON source data] --> B[FME: geometry cleanup, attribute joins, EPSG:6634 to WGS84]
+    B --> C[3D Tiles export via Cesium ion]
+    C --> D[CesiumJS viewer: attribute-driven styling]
+```
 
 1. CityJSON source data ingested and validated
 2. FME workbench: geometry cleanup, attribute joins, coordinate transform (EPSG:6634 → WGS84)
 3. Export to 3D Tiles (Cesium ion pipeline)
 4. Served through CesiumJS with attribute-driven styling
 
-<!-- TODO: swap in a real architecture diagram (Mermaid is supported — see
-     docs/ideas-inspiration/design-ideas.md for the planned "System Architecture" page). -->
+## Result
 
-## Live demo
-
-Color-by-height and color-by-year-built styling, click any building for its full
-attribute table.
+- [PLACEHOLDER] Color-by-height and color-by-year-built styling, click any building for its full attribute table.
 
 <iframe
   src="../../assets/cadastral-viewer.html"
@@ -48,6 +49,26 @@ attribute table.
     client-side token restricted this way is the supported pattern for public
     CesiumJS demos — it is not a server secret.
 
-## Repo link
+<iframe
+  src="../../demos/cesium-session1/index.html?assetId=5834028"
+  style="width:100%; height:600px; border:1px solid var(--md-default-fg-color--lightest); border-radius:8px;"
+  loading="lazy">
+</iframe>
 
-<!-- TODO: link the repo (or note if private/available on request) -->
+!!! note "Running this yourself"
+    The CesiumJS Bootcamp Viewer above needs a Cesium ion access token scoped to
+    asset `5834028` — append `?token=YOUR_TOKEN` to the iframe's `src` above, or
+    set `window.CESIUM_ION_TOKEN` before the page's script runs. Same supported
+    pattern as the viewer above: a client-side token restricted to this one
+    asset ID in the [Cesium ion dashboard](https://ion.cesium.com/tokens) is not
+    a server secret.
+
+## What I'd Do Next
+
+[PLACEHOLDER — fill in before publishing]
+
+## Links
+
+- [Live viewer]()
+- [Repo]()
+- [README]()

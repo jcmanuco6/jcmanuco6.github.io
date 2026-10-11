@@ -13,3 +13,9 @@ index-stage-office.html
 
 # Isolated backups / submodules / large binary assets — see CLAUDE.md
 archive/
+
+# Subproject dependencies
+cesium-bootcamp-session1/node_modules/
+
+# Scratch audit output, not portfolio content
+audit-report.txt
