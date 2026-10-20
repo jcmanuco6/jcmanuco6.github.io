@@ -47,7 +47,7 @@ Manual 3D asset creation requires tedious desktop click-throughs and fails to sc
     <li class="wf-step">
       <article class="wf-card">
         <div class="wf-card__top">
-          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
           <span class="wf-card__index">01</span>
         </div>
         <h3 class="wf-card__title">Raw LAZ Ingestion &amp; Ground Filtering</h3>
@@ -62,7 +62,7 @@ Manual 3D asset creation requires tedious desktop click-throughs and fails to sc
     <li class="wf-step">
       <article class="wf-card">
         <div class="wf-card__top">
-          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M8 7l4-4 4 4"/><path d="M8 17l4 4 4-4"/><path d="M3 21h18"/></svg></span>
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M8 7l4-4 4 4"/><path d="M8 17l4 4 4-4"/><path d="M3 21h18"/></svg></span>
           <span class="wf-card__index">02</span>
         </div>
         <h3 class="wf-card__title">Normalized Height Extraction</h3>
@@ -77,7 +77,7 @@ Manual 3D asset creation requires tedious desktop click-throughs and fails to sc
     <li class="wf-step">
       <article class="wf-card">
         <div class="wf-card__top">
-          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/></svg></span>
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/></svg></span>
           <span class="wf-card__index">03</span>
         </div>
         <h3 class="wf-card__title">CityJSON LoD1 Generation</h3>
@@ -92,7 +92,7 @@ Manual 3D asset creation requires tedious desktop click-throughs and fails to sc
     <li class="wf-step">
       <article class="wf-card">
         <div class="wf-card__top">
-          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
           <span class="wf-card__index">04</span>
         </div>
         <h3 class="wf-card__title">Geometry Validation &amp; Compilation</h3>
@@ -107,7 +107,7 @@ Manual 3D asset creation requires tedious desktop click-throughs and fails to sc
     <li class="wf-step">
       <article class="wf-card">
         <div class="wf-card__top">
-          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 15v4a2 2 0 002 2h12a2 2 0 002-2v-4"/></svg></span>
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 15v4a2 2 0 002 2h12a2 2 0 002-2v-4"/></svg></span>
           <span class="wf-card__index">05</span>
         </div>
         <h3 class="wf-card__title">Multi-Format Export</h3>
