@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+Start every session by reading NEXT_STEPS.md and telling me the next unchecked item. Tick items off in that file as we finish them.
+
 # Project Context & Scope Rules
 
 ## Context Exclusion Guidelines (Strict)
