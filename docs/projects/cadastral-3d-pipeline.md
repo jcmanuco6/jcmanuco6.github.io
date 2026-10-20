@@ -2,76 +2,127 @@
 hide:
   - navigation
 ---
+# 3D Cadastral Digital Twin & Cloud Pipeline
 
-## At a Glance
+**Automated end-to-end spatial ETL pipeline converting raw LiDAR point clouds and 2D building footprints into LoD1 CityJSON models and enterprise 3D streaming assets.**
 
-3D CityJSON building dataset transformed into a web-browsable digital twin; [PLACEHOLDER — fill in before publishing] `CityJSON` `FME` `OGC 3D Tiles` `CesiumJS`.
+<div class="at-a-glance" markdown>
 
-## Problem
+| | |
+|---|---|
+| **Role** | Geospatial Data Engineer |
+| **Deliverable** | Multi-Format 3D Pipeline & Live Interactive Web Demo |
 
-[PLACEHOLDER — fill in before publishing]
+<ul class="skills">
+<li>Python</li>
+<li>PDAL</li>
+<li>Laspy</li>
+<li>CityJSON</li>
+<li>PyVista</li>
+<li>Cesium 3D Tiles</li>
+<li>ArcGIS SLPK</li>
+<li>glTF</li>
+</ul>
 
-## Data
+</div>
 
-- Building geometry: CityJSON LOD1 (source: [PLACEHOLDER — fill in before publishing])
-- Attributes: parcel ID, master parcel ID, height (m), ground elevation (m), year built, total units, centroid X/Y, height source
-- Projection: EPSG:6634, reprojected to WGS84 for the web viewer
+## Problem Statement
 
-## Pipeline
+Manual 3D asset creation requires tedious desktop click-throughs and fails to scale when converting municipal LiDAR and flat 2D building footprints into interactive digital twins.
 
-```mermaid
-graph LR
-    A[CityJSON source data] --> B[FME: geometry cleanup, attribute joins, EPSG:6634 to WGS84]
-    B --> C[3D Tiles export via Cesium ion]
-    C --> D[CesiumJS viewer: attribute-driven styling]
-```
+## Data & Technical Architecture
 
-1. CityJSON source data ingested and validated
-2. FME workbench: geometry cleanup, attribute joins, coordinate transform (EPSG:6634 → WGS84)
-3. Export to 3D Tiles (Cesium ion pipeline)
-4. Served through CesiumJS with attribute-driven styling
+<div class="wf-stepper" data-single="false">
+  <div class="wf-stepper__head">
+    <p class="wf-stepper__intro">Follow the process. Expand a step for the details.</p>
+    <button type="button" class="wf-play" aria-pressed="true">Pause animation</button>
+  </div>
+  <ol class="wf-steps">
+    <li class="wf-step">
+      <article class="wf-card">
+        <div class="wf-card__top">
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
+          <span class="wf-card__index">01</span>
+        </div>
+        <h3 class="wf-card__title">Raw LAZ Ingestion &amp; Ground Filtering</h3>
+        <div class="wf-card__panel" id="wf-p1" aria-hidden="true">
+          <div class="wf-card__panel-inner">
+            <p>Ingested raw LAZ tile sets and 2D building vectors; executed automated ground classification and filtering via PDAL and Laspy.</p>
+          </div>
+        </div>
+        <button type="button" class="wf-toggle" aria-expanded="false" aria-controls="wf-p1"><span class="wf-toggle__label">Details</span> <span class="wf-toggle__icon" aria-hidden="true">+</span></button>
+      </article>
+    </li>
+    <li class="wf-step">
+      <article class="wf-card">
+        <div class="wf-card__top">
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M8 7l4-4 4 4"/><path d="M8 17l4 4 4-4"/><path d="M3 21h18"/></svg></span>
+          <span class="wf-card__index">02</span>
+        </div>
+        <h3 class="wf-card__title">Normalized Height Extraction</h3>
+        <div class="wf-card__panel" id="wf-p2" aria-hidden="true">
+          <div class="wf-card__panel-inner">
+            <p>Programmatically computed building heights above ground by comparing rooftop Z-max values against ground surface models.</p>
+          </div>
+        </div>
+        <button type="button" class="wf-toggle" aria-expanded="false" aria-controls="wf-p2"><span class="wf-toggle__label">Details</span> <span class="wf-toggle__icon" aria-hidden="true">+</span></button>
+      </article>
+    </li>
+    <li class="wf-step">
+      <article class="wf-card">
+        <div class="wf-card__top">
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/></svg></span>
+          <span class="wf-card__index">03</span>
+        </div>
+        <h3 class="wf-card__title">CityJSON LoD1 Generation</h3>
+        <div class="wf-card__panel" id="wf-p3" aria-hidden="true">
+          <div class="wf-card__panel-inner">
+            <p>Serialized extracted building volumes into structured LoD1 3D CityJSON prisms using <code>cjio</code>.</p>
+          </div>
+        </div>
+        <button type="button" class="wf-toggle" aria-expanded="false" aria-controls="wf-p3"><span class="wf-toggle__label">Details</span> <span class="wf-toggle__icon" aria-hidden="true">+</span></button>
+      </article>
+    </li>
+    <li class="wf-step">
+      <article class="wf-card">
+        <div class="wf-card__top">
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+          <span class="wf-card__index">04</span>
+        </div>
+        <h3 class="wf-card__title">Geometry Validation &amp; Compilation</h3>
+        <div class="wf-card__panel" id="wf-p4" aria-hidden="true">
+          <div class="wf-card__panel-inner">
+            <p>Ran automated mesh verification via PyVista (PLY/OBJ) and compiled assets into a unified spatial repository.</p>
+          </div>
+        </div>
+        <button type="button" class="wf-toggle" aria-expanded="false" aria-controls="wf-p4"><span class="wf-toggle__label">Details</span> <span class="wf-toggle__icon" aria-hidden="true">+</span></button>
+      </article>
+    </li>
+    <li class="wf-step">
+      <article class="wf-card">
+        <div class="wf-card__top">
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M4 15v4a2 2 0 002 2h12a2 2 0 002-2v-4"/></svg></span>
+          <span class="wf-card__index">05</span>
+        </div>
+        <h3 class="wf-card__title">Multi-Format Export</h3>
+        <div class="wf-card__panel" id="wf-p5" aria-hidden="true">
+          <div class="wf-card__panel-inner">
+            <p>Exported streaming-optimized formats including Cesium 3D Tiles, ArcGIS Scene Layers (.SLPK), and raw mesh packages.</p>
+          </div>
+        </div>
+        <button type="button" class="wf-toggle" aria-expanded="false" aria-controls="wf-p5"><span class="wf-toggle__label">Details</span> <span class="wf-toggle__icon" aria-hidden="true">+</span></button>
+      </article>
+    </li>
+  </ol>
+</div>
 
-## Result
+## Results & Impact
 
-- [PLACEHOLDER] Color-by-height and color-by-year-built styling, click any building for its full attribute table.
+- Eliminated manual desktop bottlenecks, delivering a fully automated CLI-driven pipeline that scales 3D municipal asset production.
+- Successfully embedded an interactive web demo featuring real color-by-height/year-built styling and full attribute table interrogation.
 
 <iframe
-  src="../../assets/cadastral-viewer.html"
+  src="/projects/cadastral-demo/"
   style="width:100%; height:600px; border:1px solid var(--md-default-fg-color--lightest); border-radius:8px;"
   loading="lazy">
 </iframe>
-
-!!! note "Running this yourself"
-    The viewer above needs a Cesium ion access token scoped to this asset — append
-    `?token=YOUR_TOKEN` to the iframe's `src`, or set `window.CESIUM_ION_TOKEN` before
-    the page's script runs. Scope the token to this one asset ID in the
-    [Cesium ion dashboard](https://ion.cesium.com/tokens) before publishing; a
-    client-side token restricted this way is the supported pattern for public
-    CesiumJS demos — it is not a server secret.
-
-<iframe
-  src="../../demos/cesium-session1/index.html?assetId=5834028"
-  style="width:100%; height:600px; border:1px solid var(--md-default-fg-color--lightest); border-radius:8px;"
-  loading="lazy">
-</iframe>
-
-!!! note "Running this yourself"
-    The CesiumJS Bootcamp Viewer above needs a Cesium ion access token scoped to
-    asset `5834028` — append `?token=YOUR_TOKEN` to the iframe's `src` above, or
-    set `window.CESIUM_ION_TOKEN` before the page's script runs. Same supported
-    pattern as the viewer above: a client-side token restricted to this one
-    asset ID in the [Cesium ion dashboard](https://ion.cesium.com/tokens) is not
-    a server secret.
-
-<iframe src="/projects/cadastral-demo/" width="100%" height="600"
-        style="border:0;border-radius:8px;"></iframe>
-
-## What I'd Do Next
-
-[PLACEHOLDER — fill in before publishing]
-
-## Links
-
-- [Live viewer]()
-- [Repo]()
-- [README]()

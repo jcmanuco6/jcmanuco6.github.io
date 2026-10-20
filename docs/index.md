@@ -31,26 +31,33 @@ current without manual re-processing.
 
 <div class="grid cards" markdown>
 
--   :material-office-building-outline:{ .lg .middle } **3D Cadastral Pipeline**
+-   :material-office-building-outline:{ .lg .middle } **3D Cadastral Digital Twin & Cloud Pipeline**
 
     ---
 
-    CityJSON &rarr; FME &rarr; OGC 3D Tiles &rarr; CesiumJS. County-scale
+    Raw LiDAR &rarr; PDAL/cjio CityJSON LoD1 &rarr; Cesium 3D Tiles. County-scale
     building models, color-styled by height and year built, with
     click-to-inspect parcel attributes.
 
     [:octicons-arrow-right-24: Case study](projects/cadastral-3d-pipeline.md)
 
--   :material-database-arrow-right-outline:{ .lg .middle } **Spatial ETL Pipeline**
+-   :material-database-arrow-right-outline:{ .lg .middle } **Cadastral Mapping Automation Guide (POC)**
 
     ---
 
-    Automated batch geoprocessing and API integrations — raw source data
-    to cloud-ready formats (GeoParquet, 3D Tiles) on a schedule.
+    Containerized spatial ETL pipeline automating field inspection data
+    from API to ArcGIS Online hosted feature services.
 
-    <!-- TODO: real project details -->
+    [:octicons-arrow-right-24: Case study](projects/cadastral-mapbook-automation.md)
 
-    [:octicons-arrow-right-24: Case study](projects/spatial-etl-pipeline.md)
+-   :material-brain:{ .lg .middle } **Deep Learning Parcel Land-Use Classification**
+
+    ---
+
+    DuckDB + GeoParquet seed-labeling pipeline feeding ArcGIS Pro's
+    PyTorch deep learning framework to train a parcel land-use classifier.
+
+    [:octicons-arrow-right-24: Case study](projects/deep-learning-land-use-classification.md)
 
 -   :material-map-search-outline:{ .lg .middle } **Interactive Analytics Map**
 

@@ -7,7 +7,7 @@ theme:
   name: material
   font:
     text: Inter
-    code: JetBrains Mono
+    code: IBM Plex Mono
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -34,12 +34,18 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/workflow-stepper.css
+  - stylesheets/project-page.css
+
+extra_javascript:
+  - javascripts/workflow-stepper.js
 
 nav:
   - Home: index.md
   - Projects:
-      - 3D Cadastral Pipeline: projects/cadastral-3d-pipeline.md
-      - Spatial ETL Pipeline: projects/spatial-etl-pipeline.md
+      - 3D Cadastral Digital Twin & Cloud Pipeline: projects/cadastral-3d-pipeline.md
+      - Cadastral Mapping Automation Guide (POC): projects/cadastral-mapbook-automation.md
+      - Deep Learning Parcel Land-Use Classification: projects/deep-learning-land-use-classification.md
       - Interactive Analytics Map: projects/analytics-map.md
       - System Architecture: projects/system-architecture.md
       - Reality Capture Workflow: projects/reality-capture.md
