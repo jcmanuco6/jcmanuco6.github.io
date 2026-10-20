@@ -2,18 +2,14 @@
 hide:
   - navigation
 ---
+
+<div class="project-hero" markdown>
+
 # 3D Cadastral Digital Twin & Cloud Pipeline
 
-**Automated end-to-end spatial ETL pipeline converting raw LiDAR point clouds and 2D building footprints into LoD1 CityJSON models and enterprise 3D streaming assets.**
+<p class="project-subtitle">Automated end-to-end spatial ETL pipeline converting raw LiDAR point clouds and 2D building footprints into LoD1 CityJSON models and enterprise 3D streaming assets.</p>
 
-<div class="at-a-glance" markdown>
-
-| | |
-|---|---|
-| **Role** | Geospatial Data Engineer |
-| **Deliverable** | Multi-Format 3D Pipeline & Live Interactive Web Demo |
-
-<ul class="skills">
+<ul class="chips">
 <li>Python</li>
 <li>PDAL</li>
 <li>Laspy</li>
@@ -26,12 +22,22 @@ hide:
 
 </div>
 
+<nav class="section-nav">
+<a href="#problem-statement">Problem Statement</a>
+<a href="#data-technical-architecture">Data &amp; Technical Architecture</a>
+<a href="#results-impact">Results &amp; Impact</a>
+</nav>
+
+<div class="case-section" markdown>
+
 ## Problem Statement
 
 Manual 3D asset creation requires tedious desktop click-throughs and fails to scale when converting municipal LiDAR and flat 2D building footprints into interactive digital twins.
 
-## Data & Technical Architecture
+</div>
 
+<div class="case-section">
+<h2 id="data-technical-architecture">Data &amp; Technical Architecture</h2>
 <div class="wf-stepper" data-single="false">
   <div class="wf-stepper__head">
     <p class="wf-stepper__intro">Follow the process. Expand a step for the details.</p>
@@ -115,6 +121,9 @@ Manual 3D asset creation requires tedious desktop click-throughs and fails to sc
     </li>
   </ol>
 </div>
+</div>
+
+<div class="case-section" markdown>
 
 ## Results & Impact
 
@@ -126,3 +135,5 @@ Manual 3D asset creation requires tedious desktop click-throughs and fails to sc
   style="width:100%; height:600px; border:1px solid var(--md-default-fg-color--lightest); border-radius:8px;"
   loading="lazy">
 </iframe>
+
+</div>
