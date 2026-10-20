@@ -61,9 +61,17 @@
   border-color: var(--md-accent-fg-color);
 }
 
+/* ---- Section card ---- */
+.case-section {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 /* ---- Headings, scoped to pages that use .project-hero only ---- */
 .md-content .project-hero h1,
-.md-content .project-hero ~ h2 {
+.md-content .case-section h2 {
   font-weight: 600;
   letter-spacing: -0.035em;
 }

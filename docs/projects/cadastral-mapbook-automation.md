@@ -28,20 +28,16 @@ hide:
 <a href="#status-next-steps">Status &amp; Next Steps</a>
 </nav>
 
+<div class="case-section" markdown>
+
 ## Overview
 
 Producing parcel map sheets by hand in ArcGIS Pro is slow and hard to repeat: each sheet has to be set up, checked and exported one by one, and scripts often break because of hardcoded file paths. This proof of concept automates the whole run. A single script reads the parcel fabric, drives a staged layout template, and exports every sheet into one PDF mapbook.
 
-| | |
-|---|---|
-| **Role** | Geospatial Data Engineer |
-| **Input** | Parcels_2025 → `parcel_fabric.parquet` |
-| **Template** | `parcel_stage_template.aprx` |
-| **Script** | `01_build_parcel_mapbook.py` |
-| **Output** | Multi-page layout series / PDF mapbook |
+</div>
 
-## Workflow
-
+<div class="case-section">
+<h2 id="workflow">Workflow</h2>
 <div class="wf-stepper" data-single="false">
   <div class="wf-stepper__head">
     <p class="wf-stepper__intro">Follow the process. Expand a step for the details.</p>
@@ -111,6 +107,10 @@ Producing parcel map sheets by hand in ArcGIS Pro is slow and hard to repeat: ea
   </ol>
 </div>
 
+</div>
+
+<div class="case-section" markdown>
+
 ## Tools & Technologies
 
 - **ArcGIS Pro & ArcPy** — layout template and map series automation
@@ -118,9 +118,15 @@ Producing parcel map sheets by hand in ArcGIS Pro is slow and hard to repeat: ea
 - **Conda** — isolated environment (`prod-map-cadas-env`)
 - **Parquet** — compact, fast storage for the parcel fabric
 
+</div>
+
+<div class="case-section" markdown>
+
 ## Status & Next Steps
 
 **Status:** In progress (last updated 2026-10-12).
 
 - Finish the cartographic QC of all layer components.
 - Move the layout to a **web print template** so map sheets can be produced from the browser.
+
+</div>
