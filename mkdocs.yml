@@ -52,7 +52,7 @@ nav:
       - Reality Capture Workflow: projects/reality-capture.md
   - Demos:
       - CesiumJS Bootcamp Viewer: demos/cesium-session1/index.html
-  - Resume: cv/Joan_Colon_Resume_26-08-29.pdf
+  - Resume: cv/Joan_Colon_Resume_1018.pdf
 
 markdown_extensions:
   - attr_list
