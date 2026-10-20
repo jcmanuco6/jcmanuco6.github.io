@@ -11,9 +11,9 @@ hide:
 
 <p class="hero-eyebrow">GIS Analyst · Maui, Hawaiʻi</p>
 
-<h1 class="hero-title">Land records,<br>rebuilt in <em>3D.</em></h1>
+<h1 class="hero-title">Mapping complex data<br>into <em>clear solutions.</em></h1>
 
-<p class="hero-intro">GIS Analyst at the County of Maui. I build Python pipelines that turn parcels, LiDAR and drone imagery into 3D cadastres and web maps.</p>
+<p class="hero-intro">Designing automated pipelines that bridge spatial databases, ETL, and spatial infrastructure to turn complex data into reliable visual information.</p>
 
 [Explore my work →](#projects){ .md-button .md-button--primary .hero-cta }
 [Resume](cv/Joan_Colon_Resume_1018.pdf){ .md-button .hero-cta }
@@ -23,14 +23,7 @@ hide:
 
 ## About { #about .section }
 
-I build geospatial pipelines and 3D visualization systems that turn raw survey,
-LiDAR, and municipal parcel data into interactive tools county and state
-government teams actually use — from CityJSON building models served as
-OGC 3D Tiles, to automated ETL that keeps property and infrastructure data
-current without manual re-processing.
-
-<!-- TODO: replace with 2-3 sentences of real background: years of experience,
-     domain (municipal GIS / AEC / utilities), tools you're strongest in. -->
+I specialize in spatial data engineering—building robust ETL workflows and scalable spatial database architecture that convert complex, raw data into clear, reliable operational tools.
 
 ## Projects { #projects .section }
 
