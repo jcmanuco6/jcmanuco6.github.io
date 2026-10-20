@@ -5,7 +5,14 @@ hide:
 
 ## At a Glance
 
-Spatial SQL-driven analytics for utility infrastructure annexation planning and coverage gap analysis. Role: GIS analyst. `PostGIS` `Spatial SQL` `ArcGIS` `Network Analysis`
+Spatial SQL-driven analytics for utility infrastructure annexation planning and coverage gap analysis.
+
+<ul class="skills">
+<li>PostGIS</li>
+<li>Spatial SQL</li>
+<li>ArcGIS</li>
+<li>Network Analysis</li>
+</ul>
 
 ## Problem
 

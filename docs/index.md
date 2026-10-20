@@ -59,27 +59,14 @@ current without manual re-processing.
 
     [:octicons-arrow-right-24: Case study](projects/deep-learning-land-use-classification.md)
 
--   :material-map-search-outline:{ .lg .middle } **Interactive Analytics Map**
+-   :material-sitemap-outline:{ .lg .middle } **CRIM Cadastral Portal**
 
     ---
 
-    Embedded map application over spatial queries and raster/vector
-    processing notebooks, built for non-GIS stakeholders.
+    High-availability ArcGIS Enterprise portal serving up-to-date cadastral
+    data for all of Puerto Rico — browse, purchase, and download online.
 
-    <!-- TODO: real project details -->
-
-    [:octicons-arrow-right-24: Case study](projects/analytics-map.md)
-
--   :material-sitemap-outline:{ .lg .middle } **System Architecture**
-
-    ---
-
-    Data flow and database schema design for a multi-source geospatial
-    platform — CLI tooling, PostGIS, and cloud storage conversions.
-
-    <!-- TODO: real project details -->
-
-    [:octicons-arrow-right-24: Case study](projects/system-architecture.md)
+    [:octicons-arrow-right-24: Case study](projects/crim-cadastral-portal.md)
 
 -   :material-drone:{ .lg .middle } **Reality Capture Workflow**
 

@@ -36,9 +36,11 @@ extra_css:
   - stylesheets/extra.css
   - stylesheets/workflow-stepper.css
   - stylesheets/project-page.css
+  - stylesheets/carousel.css
 
 extra_javascript:
   - javascripts/workflow-stepper.js
+  - javascripts/carousel.js
 
 nav:
   - Home: index.md
@@ -46,8 +48,7 @@ nav:
       - 3D Cadastral Digital Twin & Cloud Pipeline: projects/cadastral-3d-pipeline.md
       - Cadastral Mapping Automation Guide (POC): projects/cadastral-mapbook-automation.md
       - Deep Learning Parcel Land-Use Classification: projects/deep-learning-land-use-classification.md
-      - Interactive Analytics Map: projects/analytics-map.md
-      - System Architecture: projects/system-architecture.md
+      - CRIM Cadastral Portal: projects/crim-cadastral-portal.md
       - Reality Capture Workflow: projects/reality-capture.md
   - Demos:
       - CesiumJS Bootcamp Viewer: demos/cesium-session1/index.html
