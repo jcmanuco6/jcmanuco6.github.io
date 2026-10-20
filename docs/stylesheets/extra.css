@@ -1,27 +1,3 @@
-/* ---- Hero ---- */
-.hero {
-  text-align: center;
-  padding: 4.5rem 1rem 3rem;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.25rem;
-}
-
-.hero .tagline {
-  font-size: 1.15rem;
-  color: var(--md-default-fg-color--light);
-  margin-bottom: 2rem;
-  font-weight: 400;
-}
-
-.hero .md-button {
-  margin: 0 0.4rem;
-}
-
 /* ---- Hero ridge-map background ---- */
 .hero-background-wrapper {
   position: relative;
@@ -46,6 +22,60 @@
 .hero-content {
   position: relative;
   z-index: 1;
+  padding: 3rem 1.5rem;
+  text-align: left;
+}
+
+.md-typeset .hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1.2rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--md-accent-fg-color);
+}
+
+.md-typeset .hero-eyebrow::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+h1.hero-title {
+  margin: 0 0 1.2rem;
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset h1.hero-title em {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  color: var(--md-accent-fg-color);
+}
+
+.md-typeset .hero-intro {
+  max-width: 34rem;
+  margin: 0 0 1.8rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset .hero-cta {
+  margin: 0 0.5rem 0.5rem 0;
+  border-radius: 10px;
+  padding: 0.7rem 1.4rem;
 }
 
 /* ---- Section rhythm ---- */

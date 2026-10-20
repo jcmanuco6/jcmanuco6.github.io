@@ -9,16 +9,14 @@ hide:
 <div class="hero-background-graphic" aria-hidden="true"></div>
 <div class="hero-content" markdown>
 
-<div class="hero" markdown>
+<p class="hero-eyebrow">GIS Analyst · Maui, Hawaiʻi</p>
 
-# Joan Colon
+<h1 class="hero-title">Land records,<br>rebuilt in <em>3D.</em></h1>
 
-<p class="tagline">Geospatial Data Engineer — 3D digital twins, cadastral systems &amp; spatial ETL</p>
+<p class="hero-intro">GIS Analyst at the County of Maui. I build Python pipelines that turn parcels, LiDAR and drone imagery into 3D cadastres and web maps.</p>
 
-[View Projects](#projects){ .md-button .md-button--primary }
-[Resume](cv/Joan_Colon_Resume_1018.pdf){ .md-button }
-
-</div>
+[Explore my work →](#projects){ .md-button .md-button--primary .hero-cta }
+[Resume](cv/Joan_Colon_Resume_1018.pdf){ .md-button .hero-cta }
 
 </div>
 </div>
