@@ -68,24 +68,6 @@
   gap: 0.4rem;
 }
 
-/* ---- At-a-glance metadata block ---- */
-.at-a-glance {
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 0.5rem;
-  padding: 1rem 1.25rem;
-  margin: 1.5rem 0;
-  background: var(--md-code-bg-color);
-}
-
-.at-a-glance table {
-  margin: 0 0 0.75rem 0;
-}
-
-.at-a-glance table td:first-child {
-  white-space: nowrap;
-  padding-right: 1rem;
-}
-
 /* ---- Horizontal numbered workflow pipeline ---- */
 .workflow-container {
   display: grid;
