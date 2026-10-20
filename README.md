@@ -12,16 +12,17 @@ MkDocs Material portfolio for Joan Colon, Geospatial Data Engineer. Live at [jcm
 
 ## Quick Start (local)
 
-No `requirements.txt` or `environment.yml` existed in this repo, so a minimal [`requirements.txt`](requirements.txt) was added from what `mkdocs.yml` needs. The actual local setup used so far is a conda environment named `geo_env`; either approach works.
-
-```
-conda create -n geo_env python=3.11
-conda activate geo_env
-pip install -r requirements.txt
-```
-
-- Serve locally: `mkdocs serve`
-- Build (must pass before any commit): `mkdocs build --strict`
+1. Open a terminal in the repo root — the folder containing `mkdocs.yml`.
+2. Activate the environment:
+   - Already have the `geo_env` conda environment set up? `conda activate geo_env`
+   - Starting fresh? No `requirements.txt` or `environment.yml` existed in this repo, so a minimal [`requirements.txt`](requirements.txt) was added from what `mkdocs.yml` needs:
+     ```
+     conda create -n geo_env python=3.11
+     conda activate geo_env
+     pip install -r requirements.txt
+     ```
+3. Serve locally: `mkdocs serve`, then open the URL it prints (usually `http://127.0.0.1:8000`). It live-reloads as you edit files.
+4. Before committing: `mkdocs build --strict` — must exit 0. It catches broken links and orphaned nav entries that `serve` won't flag.
 
 ## Deploy
 
