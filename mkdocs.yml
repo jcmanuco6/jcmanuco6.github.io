@@ -53,6 +53,7 @@ nav:
   - Demos:
       - CesiumJS Bootcamp Viewer: demos/cesium-session1/index.html
   - Resume: cv/Joan_Colon_Resume_1018.pdf
+  - Contact: contact.md
 
 markdown_extensions:
   - attr_list

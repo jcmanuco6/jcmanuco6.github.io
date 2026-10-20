@@ -21,6 +21,7 @@
 - [ ] Add the new office workflow (details coming tomorrow)
 - [ ] Fix the CesiumJS Bootcamp Viewer demo: diagnose first (console errors, ion token URL restrictions, `navigation.instant`, container height, relative paths), propose the fix, wait for OK
 - [ ] Check dark-mode contrast of the hero accent color
+- [ ] Certifications page (see certifications prompt)
 - [ ] Final: `mkdocs build --strict`, check every page on desktop + phone
 
 ## Go live (only after everything above is done)

@@ -1,3 +1,33 @@
+/* ---- Contact page ---- */
+.md-typeset .page-intro {
+  max-width: 34rem;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .contact-list {
+  display: grid;
+  gap: 0.6rem;
+  max-width: 30rem;
+  margin: 1.5rem 0;
+}
+.md-typeset .contact-list p { margin: 0; }
+.md-typeset a.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 12px;
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+.md-typeset a.contact-row:hover { border-color: var(--md-accent-fg-color); }
+.md-typeset a.contact-row .twemoji { color: var(--md-accent-fg-color); }
+.md-typeset .contact-location {
+  font-size: 0.75rem;
+  color: var(--md-default-fg-color--light);
+}
+
 /* ---- Hero ridge-map background ---- */
 .hero-background-wrapper {
   position: relative;
