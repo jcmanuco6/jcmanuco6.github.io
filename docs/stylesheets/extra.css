@@ -22,6 +22,32 @@
   margin: 0 0.4rem;
 }
 
+/* ---- Hero ridge-map background ---- */
+.hero-background-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.hero-background-graphic {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: url("../assets/img/puerto-rico-ridge-map.png") center top / cover no-repeat;
+  opacity: 0.08;
+  filter: grayscale(100%);
+  mix-blend-mode: multiply;
+}
+[data-md-color-scheme="slate"] .hero-background-graphic {
+  opacity: 0.06;
+  filter: grayscale(100%) invert(100%);
+  mix-blend-mode: screen;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
 /* ---- Section rhythm ---- */
 .section {
   margin: 4rem 0;

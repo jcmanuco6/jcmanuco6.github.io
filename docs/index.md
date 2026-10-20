@@ -5,6 +5,10 @@ hide:
   - toc
 ---
 
+<div class="hero-background-wrapper" markdown>
+<div class="hero-background-graphic" aria-hidden="true"></div>
+<div class="hero-content" markdown>
+
 <div class="hero" markdown>
 
 # Joan Colon
@@ -12,8 +16,11 @@ hide:
 <p class="tagline">Geospatial Data Engineer — 3D digital twins, cadastral systems &amp; spatial ETL</p>
 
 [View Projects](#projects){ .md-button .md-button--primary }
-[Resume](cv/Joan_Colon_Resume_26-08-29.pdf){ .md-button }
+[Resume](cv/Joan_Colon_Resume_1018.pdf){ .md-button }
 
+</div>
+
+</div>
 </div>
 
 ## About { #about .section }
