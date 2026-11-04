@@ -14,8 +14,9 @@ index-stage-office.html
 # Isolated backups / submodules / large binary assets — see CLAUDE.md
 archive/
 
-# Subproject dependencies
-cesium-bootcamp-session1/node_modules/
+# Isolated reference project — own nested .git repo, holds .env.local with
+# a live Cesium ion token. Not portfolio content, never commit it.
+cesium-bootcamp-session1/
 
 # Scratch audit output, not portfolio content
 audit-report.txt

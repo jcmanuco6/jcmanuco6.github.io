@@ -206,3 +206,42 @@ h1.hero-title {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18), 0 2px 4px rgba(0, 0, 0, 0.1);
   transform: translateY(-1px);
 }
+
+/* ---- Certification cards: image-forward layout ---- */
+.md-typeset .grid.cards.cert-cards > ul > li {
+  overflow: hidden;
+  padding: 0 0 1.2em;
+}
+
+.md-typeset .grid.cards.cert-cards > ul > li > p:first-child > a {
+  display: block;
+  margin: 0 0 1em;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.md-typeset .grid.cards.cert-cards > ul > li img {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.md-typeset .grid.cards.cert-cards > ul > li a:hover img {
+  transform: scale(1.02);
+}
+
+.md-typeset .grid.cards.cert-cards > ul > li > p:not(:first-child) {
+  margin: 0 1.2em;
+}
+
+.md-typeset .grid.cards.cert-cards > ul > li strong {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5em;
+}
+
+.md-typeset .grid.cards.cert-cards .cert-meta {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--md-default-fg-color--light);
+}
+

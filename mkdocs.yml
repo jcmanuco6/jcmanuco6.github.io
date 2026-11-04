@@ -47,12 +47,13 @@ nav:
   - Projects:
       - 3D Cadastral Digital Twin & Cloud Pipeline: projects/cadastral-3d-pipeline.md
       - Cadastral Mapping Automation Guide (POC): projects/cadastral-mapbook-automation.md
-      - Deep Learning Parcel Land-Use Classification: projects/deep-learning-land-use-classification.md
+      - Maui Commute Traffic Hotspot Analyzer: projects/maui-traffic-hotspot.md
       - CRIM Cadastral Portal: projects/crim-cadastral-portal.md
       - Reality Capture Workflow: projects/reality-capture.md
   - Demos:
       - CesiumJS Bootcamp Viewer: demos/cesium-session1/index.html
-  - Resume: cv/Joan_Colon_Resume_1018.pdf
+  - Resume: cv/Joan_Colon_CV_MM10.pdf
+  - Certifications: certifications/index.md
   - Contact: contact.md
 
 markdown_extensions:

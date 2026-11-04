@@ -16,7 +16,7 @@ hide:
 <p class="hero-intro">Designing automated pipelines that bridge spatial databases, ETL, and spatial infrastructure to turn complex data into reliable visual information.</p>
 
 [Explore my work →](#projects){ .md-button .md-button--primary .hero-cta }
-[Resume](cv/Joan_Colon_Resume_1018.pdf){ .md-button .hero-cta }
+[Resume](cv/Joan_Colon_CV_MM10.pdf){ .md-button .hero-cta }
 
 </div>
 </div>
@@ -48,14 +48,14 @@ I specialize in spatial data engineering—building robust ETL workflows and sca
 
     [:octicons-arrow-right-24: Case study](projects/cadastral-mapbook-automation.md)
 
--   :material-brain:{ .lg .middle } **Deep Learning Parcel Land-Use Classification**
+-   :material-traffic-light:{ .lg .middle } **Maui Commute Traffic Hotspot Analyzer**
 
     ---
 
-    DuckDB + GeoParquet seed-labeling pipeline feeding ArcGIS Pro's
-    PyTorch deep learning framework to train a parcel land-use classifier.
+    TomTom traffic flow + OSMnx road networks, fused to flag the worst AM
+    spillback intersections on the Kula → Kahului commute, free-tier only.
 
-    [:octicons-arrow-right-24: Case study](projects/deep-learning-land-use-classification.md)
+    [:octicons-arrow-right-24: Case study](projects/maui-traffic-hotspot.md)
 
 -   :material-sitemap-outline:{ .lg .middle } **CRIM Cadastral Portal**
 

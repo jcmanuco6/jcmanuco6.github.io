@@ -16,7 +16,7 @@ hide:
 
 [:fontawesome-brands-github: github.com/jcmanuco6](https://github.com/jcmanuco6){ .contact-row target="_blank" rel="noopener" }
 
-[:material-file-download-outline: Download resume (PDF)](cv/Joan_Colon_Resume_1018.pdf){ .contact-row }
+[:material-file-download-outline: Download resume (PDF)](cv/Joan_Colon_CV_MM10.pdf){ .contact-row }
 
 </div>
 
