@@ -16,7 +16,7 @@ hide:
 <p class="hero-intro">Designing automated pipelines that bridge spatial databases, ETL, and spatial infrastructure to turn complex data into reliable visual information.</p>
 
 [Explore my work →](#projects){ .md-button .md-button--primary .hero-cta }
-[Resume](cv/Joan_Colon_CV_MM10.pdf){ .md-button .hero-cta }
+[Resume](cv/Joan_Colon_CV_MM11.pdf){ .md-button .hero-cta }
 
 </div>
 </div>
