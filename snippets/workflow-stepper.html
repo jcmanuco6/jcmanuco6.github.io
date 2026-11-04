@@ -1,0 +1,73 @@
+<!-- Workflow Process Stepper
+     Paste into any .md page. Keep it as ONE block with NO blank lines inside,
+     otherwise Python-Markdown splits the HTML apart.
+     To add a step: copy one <li class="wf-step"> ... </li>, change the ids (wf-p5),
+     the index (05), icon, title and text. -->
+<div class="wf-stepper" data-single="false">
+  <div class="wf-stepper__head">
+    <p class="wf-stepper__intro">Follow the process. Expand a step for the details.</p>
+    <button type="button" class="wf-play" aria-pressed="true">Pause animation</button>
+  </div>
+  <ol class="wf-steps">
+    <li class="wf-step">
+      <article class="wf-card">
+        <div class="wf-card__top">
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
+          <span class="wf-card__index">01</span>
+        </div>
+        <h3 class="wf-card__title">Raw LAZ Ingestion &amp; Ground Filtering</h3>
+        <div class="wf-card__panel" id="wf-p1" aria-hidden="true">
+          <div class="wf-card__panel-inner">
+            <p>Ingested raw LAZ tile sets and 2D building vectors; executed automated ground classification and filtering via PDAL and Laspy.</p>
+          </div>
+        </div>
+        <button type="button" class="wf-toggle" aria-expanded="false" aria-controls="wf-p1"><span class="wf-toggle__label">Details</span> <span class="wf-toggle__icon" aria-hidden="true">+</span></button>
+      </article>
+    </li>
+    <li class="wf-step">
+      <article class="wf-card">
+        <div class="wf-card__top">
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M8 7l4-4 4 4"/><path d="M8 17l4 4 4-4"/><path d="M3 21h18"/></svg></span>
+          <span class="wf-card__index">02</span>
+        </div>
+        <h3 class="wf-card__title">Normalized Height Extraction</h3>
+        <div class="wf-card__panel" id="wf-p2" aria-hidden="true">
+          <div class="wf-card__panel-inner">
+            <p>Programmatically computed building heights above ground by comparing rooftop Z-max values against ground surface models.</p>
+          </div>
+        </div>
+        <button type="button" class="wf-toggle" aria-expanded="false" aria-controls="wf-p2"><span class="wf-toggle__label">Details</span> <span class="wf-toggle__icon" aria-hidden="true">+</span></button>
+      </article>
+    </li>
+    <li class="wf-step">
+      <article class="wf-card">
+        <div class="wf-card__top">
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/></svg></span>
+          <span class="wf-card__index">03</span>
+        </div>
+        <h3 class="wf-card__title">CityJSON LoD1 Generation</h3>
+        <div class="wf-card__panel" id="wf-p3" aria-hidden="true">
+          <div class="wf-card__panel-inner">
+            <p>Serialized extracted building volumes into structured LoD1 3D CityJSON prisms using <code>cjio</code>.</p>
+          </div>
+        </div>
+        <button type="button" class="wf-toggle" aria-expanded="false" aria-controls="wf-p3"><span class="wf-toggle__label">Details</span> <span class="wf-toggle__icon" aria-hidden="true">+</span></button>
+      </article>
+    </li>
+    <li class="wf-step">
+      <article class="wf-card">
+        <div class="wf-card__top">
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+          <span class="wf-card__index">04</span>
+        </div>
+        <h3 class="wf-card__title">Geometry Validation &amp; Compilation</h3>
+        <div class="wf-card__panel" id="wf-p4" aria-hidden="true">
+          <div class="wf-card__panel-inner">
+            <p>Ran automated mesh verification via PyVista (PLY/OBJ) and compiled assets into a unified spatial repository.</p>
+          </div>
+        </div>
+        <button type="button" class="wf-toggle" aria-expanded="false" aria-controls="wf-p4"><span class="wf-toggle__label">Details</span> <span class="wf-toggle__icon" aria-hidden="true">+</span></button>
+      </article>
+    </li>
+  </ol>
+</div>

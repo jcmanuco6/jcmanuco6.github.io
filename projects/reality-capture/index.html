@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://jcmanuco6.github.io/projects/reality-capture/">
       
       
-        <link rel="prev" href="../system-architecture/">
+        <link rel="prev" href="../crim-cadastral-portal/">
       
       
         <link rel="next" href="../../demos/cesium-session1/">
@@ -50,12 +50,18 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"IBM Plex Mono"}</style>
       
     
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/workflow-stepper.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/project-page.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/carousel.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -82,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#at-a-glance" class="md-skip">
+        <a href="#reality-capture-workflow" class="md-skip">
           Skip to content
         </a>
       
@@ -276,13 +282,51 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../cv/Joan_Colon_Resume_26-08-29.pdf" class="md-tabs__link">
+      <a href="../../cv/Joan_Colon_CV_MM10.pdf" class="md-tabs__link">
         
   
   
     
   
   Resume
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../certifications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Certifications
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contact/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contact
 
       </a>
     </li>
@@ -422,7 +466,7 @@
   <span class="md-ellipsis">
     
   
-    3D Cadastral Pipeline
+    3D Cadastral Digital Twin & Cloud Pipeline
   
 
     
@@ -443,14 +487,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../spatial-etl-pipeline/" class="md-nav__link">
+      <a href="../cadastral-mapbook-automation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Spatial ETL Pipeline
+    Cadastral Mapping Automation Guide (POC)
   
 
     
@@ -471,14 +515,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../analytics-map/" class="md-nav__link">
+      <a href="../maui-traffic-hotspot/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Interactive Analytics Map
+    Maui Commute Traffic Hotspot Analyzer
   
 
     
@@ -499,14 +543,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../system-architecture/" class="md-nav__link">
+      <a href="../crim-cadastral-portal/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    System Architecture
+    CRIM Cadastral Portal
   
 
     
@@ -532,6 +576,8 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -575,6 +621,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -583,10 +631,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#at-a-glance" class="md-nav__link">
+  <a href="#problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        At a Glance
+        Problem
       
     </span>
   </a>
@@ -594,10 +642,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
+  <a href="#objective" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem
+        Objective
       
     </span>
   </a>
@@ -616,32 +664,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pipeline" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pipeline
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#result" class="md-nav__link">
     <span class="md-ellipsis">
       
         Result
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-id-do-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What I'd Do Next
       
     </span>
   </a>
@@ -769,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cv/Joan_Colon_Resume_26-08-29.pdf" class="md-nav__link">
+      <a href="../../cv/Joan_Colon_CV_MM10.pdf" class="md-nav__link">
         
   
   
@@ -777,6 +803,60 @@
     
   
     Resume
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
   
 
     
@@ -808,6 +888,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -816,10 +898,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#at-a-glance" class="md-nav__link">
+  <a href="#problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        At a Glance
+        Problem
       
     </span>
   </a>
@@ -827,10 +909,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
+  <a href="#objective" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem
+        Objective
       
     </span>
   </a>
@@ -849,32 +931,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pipeline" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pipeline
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#result" class="md-nav__link">
     <span class="md-ellipsis">
       
         Result
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-id-do-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What I'd Do Next
       
     </span>
   </a>
@@ -911,61 +971,171 @@
 
 
 
-  <h1>Reality Capture Workflow</h1>
+<div class="project-hero">
+<div aria-label="Project images" class="carousel">
+<div class="carousel__track">
+<div class="carousel__slide">
+<p><img alt="Green-light theme map of La Parguera and Guánica" src="../../assets/img/parguera-guanica-green-light-theme-map.png" /></p>
+<p class="carousel__caption">Green-light theme map, La Parguera – Guánica</p>
+</div>
+<div class="carousel__slide">
+<p><img alt="Multi-AOI map sheet of La Parguera" src="../../assets/img/Parguera_new_multi_aoi.png" /></p>
+<p class="carousel__caption">Multi-AOI map sheet · <a href="../../assets/img/Parguera_new_multi_aoi.pdf">Open full PDF</a></p>
+</div>
+<div class="carousel__slide">
+<p><img alt="Reclassified imagery tile, Rincón" src="../../assets/img/Rincon-ReClass-imagery-tile-2023-04-12-02-47-am.png" /></p>
+<p class="carousel__caption">Reclassified imagery tile, Rincón</p>
+</div>
+<div class="carousel__slide">
+<p><img alt="Classification review of an imagery tile, Rincón" src="../../assets/img/rincon-imagery-tile-class-review.png" /></p>
+<p class="carousel__caption">Classification review of an imagery tile, Rincón</p>
+</div>
+</div>
+<p><button type="button" class="carousel__btn carousel__btn--prev" aria-label="Previous image">‹</button>
+<button type="button" class="carousel__btn carousel__btn--next" aria-label="Next image">›</button></p>
+<div class="carousel__dots"></div>
+</div>
+<h1 id="reality-capture-workflow">Reality Capture Workflow</h1>
+<p class="project-subtitle">Deep learning land cover classification of drone and satellite imagery to map human activity and recreation pressure on Puerto Rico's coast.</p>
+<ul class="chips">
+<li>Drone Imagery</li>
+<li>Satellite Imagery</li>
+<li>Deep Learning</li>
+<li>Land Cover</li>
+<li>ArcGIS Pro</li>
+<li>Open Source</li>
+</ul>
+</div>
+<nav class="section-nav">
+<a href="#problem">Problem</a>
+<a href="#objective">Objective</a>
+<a href="#data">Data</a>
+<a href="#pipeline">Pipeline</a>
+<a href="#result">Result</a>
+<a href="#links">Links</a>
+</nav>
 
-<h2 id="at-a-glance">At a Glance</h2>
-<p>UAV imagery processing and LiDAR analysis for coastal land cover classification and 3D terrain modeling. Role: geospatial analyst. <code>UAV</code> <code>Drone</code> <code>LiDAR</code> <code>PDAL</code> <code>DEM</code> <code>ArcGIS</code></p>
+<div class="case-section">
 <h2 id="problem">Problem</h2>
 <p>Local government needed spatial evidence of anthropogenic activity and recreation pressure in Puerto Rico's coastal zone to support planning and resource preservation decisions.</p>
+</div>
+<div class="case-section">
+<h2 id="objective">Objective</h2>
+<p>Classify high-resolution satellite and drone imagery for each study area, choose the right land cover classes through data analysis, validate them with field data, and calculate the area of each class. The deliverables were a GIS layer for each area of interest, delivered as Shapefile or GeoJSON.</p>
+</div>
+<div class="case-section">
 <h2 id="data">Data</h2>
 <ul>
-<li>UAV imagery and aerial photography</li>
-<li>LiDAR point clouds</li>
-<li>Digital Elevation Models (DEMs)</li>
-<li>Coverage: Puerto Rico maritime terrestrial zone</li>
-<li>CRS: [PLACEHOLDER]</li>
-<li>Record count: [PLACEHOLDER]</li>
+<li>High-resolution satellite imagery</li>
+<li>Drone (UAV) imagery</li>
+<li>Field data for class validation</li>
+<li>Coverage: coastal study areas in Puerto Rico, including ncón and La Parguera – Guánica</li>
 </ul>
+</div>
+<div class="case-section">
 <h2 id="pipeline">Pipeline</h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>graph LR
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    A1[UAV flight] --&gt; A2[Imagery processing]
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    A2 --&gt; A3[Land cover / land use classification]
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    A3 --&gt; A4[Coastal zone analysis]
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    A4 --&gt; A5[Planning deliverables]
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    B1[LiDAR point cloud] --&gt; B2[DEM]
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    B2 --&gt; B3[Terrain models]
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    B3 --&gt; B4[Elevation profiles]
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    B4 --&gt; B5[Volumetric assessments]
-</span></code></pre></div>
-<p><strong>UAV / land cover track:</strong></p>
-<ol>
-<li>UAV flight</li>
-<li>Imagery processing</li>
-<li>Land cover/land use classification</li>
-<li>Coastal zone analysis</li>
-<li>Planning deliverables</li>
-</ol>
-<p><strong>LiDAR / terrain track:</strong></p>
-<ol>
-<li>LiDAR point cloud</li>
-<li>DEM</li>
-<li>Terrain models</li>
-<li>Elevation profiles</li>
-<li>Volumetric assessments</li>
-</ol>
+<p>A hybrid workflow combining open-source tools and ArcGIS Pro, built around deep learning classification.</p>
+<div class="wf-stepper" data-single="false">
+  <div class="wf-stepper__head">
+    <p class="wf-stepper__intro">Follow the process. Expand a step for the details.</p>
+    <button type="button" class="wf-play" aria-pressed="true">Pause animation</button>
+  </div>
+  <ol class="wf-steps">
+    <li class="wf-step">
+      <article class="wf-card">
+        <div class="wf-card__top">
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg></span>
+          <span class="wf-card__index">01</span>
+        </div>
+        <h3 class="wf-card__title">Imagery Input</h3>
+        <div class="wf-card__panel" id="wf-p1" aria-hidden="true">
+          <div class="wf-card__panel-inner">
+            <p>Collected high-resolution satellite and drone imagery for each study area as the raster input for the workflow.</p>
+          </div>
+        </div>
+        <button type="button" class="wf-toggle" aria-expanded="false" aria-controls="wf-p1"><span class="wf-toggle__label">Details</span> <span class="wf-toggle__icon" aria-hidden="true">+</span></button>
+      </article>
+    </li>
+    <li class="wf-step">
+      <article class="wf-card">
+        <div class="wf-card__top">
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/></svg></span>
+          <span class="wf-card__index">02</span>
+        </div>
+        <h3 class="wf-card__title">Segmentation &amp; Class Design</h3>
+        <div class="wf-card__panel" id="wf-p2" aria-hidden="true">
+          <div class="wf-card__panel-inner">
+            <p>Split the imagery into segments and analyzed the data to decide which land cover classes to map.</p>
+          </div>
+        </div>
+        <button type="button" class="wf-toggle" aria-expanded="false" aria-controls="wf-p2"><span class="wf-toggle__label">Details</span> <span class="wf-toggle__icon" aria-hidden="true">+</span></button>
+      </article>
+    </li>
+    <li class="wf-step">
+      <article class="wf-card">
+        <div class="wf-card__top">
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 7l3 3.5M7 17l3-3.5M14 10.5L17 7M14 13.5L17 17"/></svg></span>
+          <span class="wf-card__index">03</span>
+        </div>
+        <h3 class="wf-card__title">Deep Learning Classification</h3>
+        <div class="wf-card__panel" id="wf-p3" aria-hidden="true">
+          <div class="wf-card__panel-inner">
+            <p>Classified the segments with a deep learning methodology, combining open-source tools with ArcGIS Pro.</p>
+          </div>
+        </div>
+        <button type="button" class="wf-toggle" aria-expanded="false" aria-controls="wf-p3"><span class="wf-toggle__label">Details</span> <span class="wf-toggle__icon" aria-hidden="true">+</span></button>
+      </article>
+    </li>
+    <li class="wf-step">
+      <article class="wf-card">
+        <div class="wf-card__top">
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+          <span class="wf-card__index">04</span>
+        </div>
+        <h3 class="wf-card__title">Reclassification &amp; QC</h3>
+        <div class="wf-card__panel" id="wf-p4" aria-hidden="true">
+          <div class="wf-card__panel-inner">
+            <p>Refined the first results through reclassification, validated the classes with field data, and checked integrity, completeness and agreed standards.</p>
+          </div>
+        </div>
+        <button type="button" class="wf-toggle" aria-expanded="false" aria-controls="wf-p4"><span class="wf-toggle__label">Details</span> <span class="wf-toggle__icon" aria-hidden="true">+</span></button>
+      </article>
+    </li>
+    <li class="wf-step">
+      <article class="wf-card">
+        <div class="wf-card__top">
+          <span class="wf-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M12 11v6"/><path d="M9 14l3 3 3-3"/></svg></span>
+          <span class="wf-card__index">05</span>
+        </div>
+        <h3 class="wf-card__title">Area Calculation &amp; Export</h3>
+        <div class="wf-card__panel" id="wf-p5" aria-hidden="true">
+          <div class="wf-card__panel-inner">
+            <p>Calculated the area of each class, exported one GIS layer per area of interest as Shapefile or GeoJSON, and stored the results on the NAS server.</p>
+          </div>
+        </div>
+        <button type="button" class="wf-toggle" aria-expanded="false" aria-controls="wf-p5"><span class="wf-toggle__label">Details</span> <span class="wf-toggle__icon" aria-hidden="true">+</span></button>
+      </article>
+    </li>
+  </ol>
+</div>
+</div>
+
+<div class="case-section">
 <h2 id="result">Result</h2>
 <ul>
-<li>[PLACEHOLDER] Geospatial analysis supporting local government planning processes and coastal resource preservation</li>
-<li>[PLACEHOLDER] Detailed topographic models and volumetric assessments for urban planning and environmental monitoring</li>
+<li>Completed the full segment workflow, from raster input to final vector output.</li>
+<li>Classified and refined the segments, then validated them through quality control.</li>
+<li>Delivered GIS layers for each area of interest as Shapefile or GeoJSON, ready for desktop and web GIS.</li>
+<li>Stored the dataset in an organized folder structure on the NAS server for easy access.</li>
+<li>Gave local government processed coastal land cover data to support planning and preservation decisions.</li>
 </ul>
-<h2 id="what-id-do-next">What I'd Do Next</h2>
-<p>Publish processed point clouds as COPC on S3 and stream directly into a CesiumJS viewer for browser-based coastal change monitoring without GIS software.</p>
+</div>
+<div class="case-section">
 <h2 id="links">Links</h2>
 <ul>
 <li><a href="https://storymaps.arcgis.com/stories/d25ee620cdfe4e52853f89161dc8d1b5">Story Map</a></li>
-<li><a href="">Repo</a></li>
-<li><a href="">README</a></li>
 </ul>
+</div>
 
 
 
@@ -1030,6 +1200,10 @@
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/workflow-stepper.js"></script>
+      
+        <script src="../../javascripts/carousel.js"></script>
       
     
   </body>

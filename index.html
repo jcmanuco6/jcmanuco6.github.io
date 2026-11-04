@@ -48,12 +48,18 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"IBM Plex Mono"}</style>
       
     
     
       <link rel="stylesheet" href="stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="stylesheets/workflow-stepper.css">
+    
+      <link rel="stylesheet" href="stylesheets/project-page.css">
+    
+      <link rel="stylesheet" href="stylesheets/carousel.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -80,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#joan-colon" class="md-skip">
+        <a href="#mapping-complex-datainto-clear-solutions" class="md-skip">
           Skip to content
         </a>
       
@@ -274,13 +280,51 @@
   
   
     <li class="md-tabs__item">
-      <a href="cv/Joan_Colon_Resume_26-08-29.pdf" class="md-tabs__link">
+      <a href="cv/Joan_Colon_CV_MM10.pdf" class="md-tabs__link">
         
   
   
     
   
   Resume
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="certifications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Certifications
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="contact/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contact
 
       </a>
     </li>
@@ -506,7 +550,7 @@
   <span class="md-ellipsis">
     
   
-    3D Cadastral Pipeline
+    3D Cadastral Digital Twin & Cloud Pipeline
   
 
     
@@ -527,14 +571,14 @@
   
   
     <li class="md-nav__item">
-      <a href="projects/spatial-etl-pipeline/" class="md-nav__link">
+      <a href="projects/cadastral-mapbook-automation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Spatial ETL Pipeline
+    Cadastral Mapping Automation Guide (POC)
   
 
     
@@ -555,14 +599,14 @@
   
   
     <li class="md-nav__item">
-      <a href="projects/analytics-map/" class="md-nav__link">
+      <a href="projects/maui-traffic-hotspot/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Interactive Analytics Map
+    Maui Commute Traffic Hotspot Analyzer
   
 
     
@@ -583,14 +627,14 @@
   
   
     <li class="md-nav__item">
-      <a href="projects/system-architecture/" class="md-nav__link">
+      <a href="projects/crim-cadastral-portal/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    System Architecture
+    CRIM Cadastral Portal
   
 
     
@@ -733,7 +777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="cv/Joan_Colon_Resume_26-08-29.pdf" class="md-nav__link">
+      <a href="cv/Joan_Colon_CV_MM10.pdf" class="md-nav__link">
         
   
   
@@ -741,6 +785,60 @@
     
   
     Resume
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="certifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
   
 
     
@@ -844,55 +942,49 @@
 
 
 
-<div class="hero">
-<h1 id="joan-colon">Joan Colon</h1>
-<p class="tagline">Geospatial Data Engineer — 3D digital twins, cadastral systems &amp; spatial ETL</p>
-<p><a class="md-button md-button--primary" href="#projects">View Projects</a>
-<a class="md-button" href="cv/Joan_Colon_Resume_26-08-29.pdf">Resume</a></p>
+<div class="hero-background-wrapper">
+<div aria-hidden="true" class="hero-background-graphic"></div>
+<div class="hero-content">
+<p class="hero-eyebrow">GIS Analyst · Maui, Hawaiʻi</p>
+<h1 class="hero-title" id="mapping-complex-datainto-clear-solutions">Mapping complex data<br>into <em>clear solutions.</em></h1>
+<p class="hero-intro">Designing automated pipelines that bridge spatial databases, ETL, and spatial infrastructure to turn complex data into reliable visual information.</p>
+<p><a class="md-button md-button--primary hero-cta" href="#projects">Explore my work →</a>
+<a class="md-button hero-cta" href="cv/Joan_Colon_CV_MM10.pdf">Resume</a></p>
+</div>
 </div>
 <h2 class="section" id="about">About</h2>
-<p>I build geospatial pipelines and 3D visualization systems that turn raw survey,
-LiDAR, and municipal parcel data into interactive tools county and state
-government teams actually use — from CityJSON building models served as
-OGC 3D Tiles, to automated ETL that keeps property and infrastructure data
-current without manual re-processing.</p>
-<!-- TODO: replace with 2-3 sentences of real background: years of experience,
-     domain (municipal GIS / AEC / utilities), tools you're strongest in. -->
-
+<p>I specialize in spatial data engineering—building robust ETL workflows and scalable spatial database architecture that convert complex, raw data into clear, reliable operational tools.</p>
 <h2 class="section" id="projects">Projects</h2>
 <div class="grid cards">
 <ul>
 <li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3v18h-6v-3.5h-2V21H5V3zm-4 4h2V5h-2zm-4 0h2V5h-2zM7 7h2V5H7zm8 4h2V9h-2zm-4 0h2V9h-2zm-4 0h2V9H7zm8 4h2v-2h-2zm-4 0h2v-2h-2zm-4 0h2v-2H7zm8 4h2v-2h-2zm-8 0h2v-2H7zM21 1H3v22h18z"/></svg></span> <strong>3D Cadastral Pipeline</strong></p>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3v18h-6v-3.5h-2V21H5V3zm-4 4h2V5h-2zm-4 0h2V5h-2zM7 7h2V5H7zm8 4h2V9h-2zm-4 0h2V9h-2zm-4 0h2V9H7zm8 4h2v-2h-2zm-4 0h2v-2h-2zm-4 0h2v-2H7zm8 4h2v-2h-2zm-8 0h2v-2H7zM21 1H3v22h18z"/></svg></span> <strong>3D Cadastral Digital Twin &amp; Cloud Pipeline</strong></p>
 <hr />
-<p>CityJSON &rarr; FME &rarr; OGC 3D Tiles &rarr; CesiumJS. County-scale
+<p>Raw LiDAR &rarr; PDAL/cjio CityJSON LoD1 &rarr; Cesium 3D Tiles. County-scale
 building models, color-styled by height and year built, with
 click-to-inspect parcel attributes.</p>
 <p><a href="projects/cadastral-3d-pipeline/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Case study</a></p>
 </li>
 <li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 13.09V7c0-2.21-3.58-4-8-4S4 4.79 4 7v10c0 2.21 3.59 4 8 4 .46 0 .9 0 1.33-.06A6 6 0 0 1 13 19v-.05c-.32.05-.65.05-1 .05-3.87 0-6-1.5-6-2v-2.23c1.61.78 3.72 1.23 6 1.23.65 0 1.27-.04 1.88-.11A5.99 5.99 0 0 1 19 13c.34 0 .67.04 1 .09m-2-.64c-1.3.95-3.58 1.55-6 1.55s-4.7-.6-6-1.55V9.64c1.47.83 3.61 1.36 6 1.36s4.53-.53 6-1.36zM12 9C8.13 9 6 7.5 6 7s2.13-2 6-2 6 1.5 6 2-2.13 2-6 2m8 13v-2h-4v-2h4v-2l3 3z"/></svg></span> <strong>Spatial ETL Pipeline</strong></p>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 13.09V7c0-2.21-3.58-4-8-4S4 4.79 4 7v10c0 2.21 3.59 4 8 4 .46 0 .9 0 1.33-.06A6 6 0 0 1 13 19v-.05c-.32.05-.65.05-1 .05-3.87 0-6-1.5-6-2v-2.23c1.61.78 3.72 1.23 6 1.23.65 0 1.27-.04 1.88-.11A5.99 5.99 0 0 1 19 13c.34 0 .67.04 1 .09m-2-.64c-1.3.95-3.58 1.55-6 1.55s-4.7-.6-6-1.55V9.64c1.47.83 3.61 1.36 6 1.36s4.53-.53 6-1.36zM12 9C8.13 9 6 7.5 6 7s2.13-2 6-2 6 1.5 6 2-2.13 2-6 2m8 13v-2h-4v-2h4v-2l3 3z"/></svg></span> <strong>Cadastral Mapping Automation Guide (POC)</strong></p>
 <hr />
-<p>Automated batch geoprocessing and API integrations — raw source data
-to cloud-ready formats (GeoParquet, 3D Tiles) on a schedule.</p>
-<!-- TODO: real project details -->
-<p><a href="projects/spatial-etl-pipeline/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Case study</a></p>
+<p>Containerized spatial ETL pipeline automating field inspection data
+from API to ArcGIS Online hosted feature services.</p>
+<p><a href="projects/cadastral-mapbook-automation/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Case study</a></p>
 </li>
 <li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.7-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5m4-12a.5.5 0 0 1 .5.5v9.31c-.58-.55-1.25-1-2-1.31V4.7l-3 1.16V10c-.7.07-1.38.24-2 .5V5.87l-4-1.4V16.5c0 .64.09 1.26.26 1.84L8 17.9l-5.34 2.07-.16.03a.5.5 0 0 1-.5-.5V4.38c0-.23.15-.41.36-.48L8 2l6 2.1 5.34-2.07zM4 5.46v11.85l3-1.16V4.45z"/></svg></span> <strong>Interactive Analytics Map</strong></p>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a2 2 0 0 1-2-2 2 2 0 0 1 2-2c1.11 0 2 .89 2 2a2 2 0 0 1-2 2m0 5a2 2 0 0 1-2-2 2 2 0 0 1 2-2c1.11 0 2 .89 2 2a2 2 0 0 1-2 2m0 5a2 2 0 0 1-2-2 2 2 0 0 1 2-2c1.11 0 2 .89 2 2a2 2 0 0 1-2 2m8-9h-3V8.86c1.72-.45 3-2 3-3.86h-3V4a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v1H4c0 1.86 1.28 3.41 3 3.86V10H4c0 1.86 1.28 3.41 3 3.86V15H4c0 1.86 1.28 3.41 3 3.86V20a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1.14c1.72-.45 3-2 3-3.86h-3v-1.14c1.72-.45 3-2 3-3.86"/></svg></span> <strong>Maui Commute Traffic Hotspot Analyzer</strong></p>
 <hr />
-<p>Embedded map application over spatial queries and raster/vector
-processing notebooks, built for non-GIS stakeholders.</p>
-<!-- TODO: real project details -->
-<p><a href="projects/analytics-map/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Case study</a></p>
+<p>TomTom traffic flow + OSMnx road networks, fused to flag the worst AM
+spillback intersections on the Kula → Kahului commute, free-tier only.</p>
+<p><a href="projects/maui-traffic-hotspot/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Case study</a></p>
 </li>
 <li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16v-3c0-1.11-.89-2-2-2h-6V8h2V2H9v6h2v3H5c-1.11 0-2 .89-2 2v3H1v6h6v-6H5v-3h6v3H9v6h6v-6h-2v-3h6v3h-2v6h6v-6zM11 4h2v2h-2zM5 20H3v-2h2zm8 0h-2v-2h2zm8 0h-2v-2h2z"/></svg></span> <strong>System Architecture</strong></p>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16v-3c0-1.11-.89-2-2-2h-6V8h2V2H9v6h2v3H5c-1.11 0-2 .89-2 2v3H1v6h6v-6H5v-3h6v3H9v6h6v-6h-2v-3h6v3h-2v6h6v-6zM11 4h2v2h-2zM5 20H3v-2h2zm8 0h-2v-2h2zm8 0h-2v-2h2z"/></svg></span> <strong>CRIM Cadastral Portal</strong></p>
 <hr />
-<p>Data flow and database schema design for a multi-source geospatial
-platform — CLI tooling, PostGIS, and cloud storage conversions.</p>
-<!-- TODO: real project details -->
-<p><a href="projects/system-architecture/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Case study</a></p>
+<p>High-availability ArcGIS Enterprise portal serving up-to-date cadastral
+data for all of Puerto Rico — browse, purchase, and download online.</p>
+<p><a href="projects/crim-cadastral-portal/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Case study</a></p>
 </li>
 <li>
 <p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 11h-1l-1-2h-6.25L16 12.5h-2L10.75 9H4c-.55 0-2-.45-2-1s1.5-2.5 3.5-2.5S7.67 6.5 9 7h12a1 1 0 0 1 1 1v3M10.75 6.5 14 3h2l-2.25 3.5zM18 11V9.5h1.75L19 11zM3 19a1 1 0 0 1-1-1 1 1 0 0 1 1-1 4 4 0 0 1 4 4 1 1 0 0 1-1 1 1 1 0 0 1-1-1 2 2 0 0 0-2-2m8 2a1 1 0 0 1-1 1 1 1 0 0 1-1-1 6 6 0 0 0-6-6 1 1 0 0 1-1-1 1 1 0 0 1 1-1 8 8 0 0 1 8 8"/></svg></span> <strong>Reality Capture Workflow</strong></p>
@@ -990,6 +1082,10 @@ and building footprint extraction for as-built documentation.</p>
     
     
       <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/workflow-stepper.js"></script>
+      
+        <script src="javascripts/carousel.js"></script>
       
     
   </body>

@@ -1,0 +1,122 @@
+/* Image carousel for project heroes.
+   Colors come only from MkDocs Material theme variables. */
+
+.carousel {
+  position: relative;
+  margin: 0;
+}
+
+/* Horizontal strip of slides; native scroll + snap = swipe on mobile for free */
+.carousel__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;            /* Firefox */
+}
+.carousel__track::-webkit-scrollbar { display: none; }
+
+.md-typeset .carousel__slide {
+  flex: 0 0 100%;
+  margin: 0;
+  scroll-snap-align: start;
+  text-align: center;
+}
+
+.md-typeset .carousel__slide p { margin: 0; }
+
+.md-typeset .carousel__slide img {
+  display: block;
+  width: 100%;
+  height: 22rem;                    /* same height for every slide */
+  object-fit: contain;
+  background: var(--md-code-bg-color);
+}
+
+.md-typeset .carousel__slide img { cursor: zoom-in; }
+
+.md-typeset .carousel__caption {
+  max-width: none;
+  margin: 0;
+  padding: 0.6rem 1.5rem 0;
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* Full-screen view */
+.carousel-zoom {
+  max-width: 95vw;
+  max-height: 95vh;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-out;
+}
+.carousel-zoom::backdrop { background: rgba(0, 0, 0, 0.8); }
+.carousel-zoom img {
+  display: block;
+  max-width: 95vw;
+  max-height: 95vh;
+  object-fit: contain;
+}
+
+/* Prev / next arrows */
+.carousel__btn {
+  position: absolute;
+  top: 11rem;                       /* half of the image height */
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 50%;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.carousel__btn:hover { border-color: var(--md-accent-fg-color); color: var(--md-accent-fg-color); }
+.carousel__btn:disabled { opacity: 0.3; cursor: default; }
+.carousel__btn--prev { left: 0.75rem; }
+.carousel__btn--next { right: 0.75rem; }
+
+/* Dots */
+.carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  padding-top: 0.6rem;
+}
+.carousel__dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--md-default-fg-color--lighter);
+  cursor: pointer;
+}
+.carousel__dot[aria-current="true"] { background: var(--md-accent-fg-color); }
+
+.carousel__btn:focus-visible,
+.carousel__dot:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
+}
+
+/* One image only: hide the controls */
+.carousel[data-count="1"] .carousel__btn,
+.carousel[data-count="1"] .carousel__dots { display: none; }
+
+/* Mobile: shorter images, swipe instead of arrows */
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .carousel__slide img { height: 14rem; }
+  .carousel__btn { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel__track { scroll-behavior: auto; }
+}

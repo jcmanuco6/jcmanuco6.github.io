@@ -1,25 +1,111 @@
-/* ---- Hero ---- */
-.hero {
-  text-align: center;
-  padding: 4.5rem 1rem 3rem;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.25rem;
-}
-
-.hero .tagline {
-  font-size: 1.15rem;
+/* ---- Contact page ---- */
+.md-typeset .page-intro {
+  max-width: 34rem;
   color: var(--md-default-fg-color--light);
-  margin-bottom: 2rem;
-  font-weight: 400;
+}
+.md-typeset .contact-list {
+  display: grid;
+  gap: 0.6rem;
+  max-width: 30rem;
+  margin: 1.5rem 0;
+}
+.md-typeset .contact-list p { margin: 0; }
+.md-typeset a.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 12px;
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+.md-typeset a.contact-row:hover { border-color: var(--md-accent-fg-color); }
+.md-typeset a.contact-row .twemoji { color: var(--md-accent-fg-color); }
+.md-typeset .contact-location {
+  font-size: 0.75rem;
+  color: var(--md-default-fg-color--light);
 }
 
-.hero .md-button {
-  margin: 0 0.4rem;
+/* ---- Hero ridge-map background ---- */
+.hero-background-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.hero-background-graphic {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: url("../assets/img/puerto-rico-ridge-map.png") center top / cover no-repeat;
+  opacity: 0.08;
+  filter: grayscale(100%);
+  mix-blend-mode: multiply;
+}
+[data-md-color-scheme="slate"] .hero-background-graphic {
+  opacity: 0.06;
+  filter: grayscale(100%) invert(100%);
+  mix-blend-mode: screen;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 1.5rem;
+  text-align: left;
+}
+
+.md-typeset .hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1.2rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--md-accent-fg-color);
+}
+
+.md-typeset .hero-eyebrow::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+h1.hero-title {
+  margin: 0 0 1.2rem;
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset h1.hero-title em {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  color: var(--md-accent-fg-color);
+}
+
+.md-typeset .hero-intro {
+  max-width: 34rem;
+  margin: 0 0 1.8rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset .hero-cta {
+  margin: 0 0.5rem 0.5rem 0;
+  border-radius: 10px;
+  padding: 0.7rem 1.4rem;
 }
 
 /* ---- Section rhythm ---- */
@@ -68,6 +154,46 @@
   gap: 0.4rem;
 }
 
+/* ---- Horizontal numbered workflow pipeline ---- */
+.workflow-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.workflow-card {
+  border-radius: 0.75rem;
+  padding: 1.25rem 1rem;
+  background: var(--md-code-bg-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.workflow-card .step-num {
+  display: block;
+  font-family: var(--md-code-font-family);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--md-accent-fg-color);
+  margin-bottom: 0.5rem;
+}
+
+.workflow-card strong {
+  display: block;
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.workflow-card p {
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+  margin: 0;
+}
+
 /* ---- Floating-panel card style (soft shadow, no hard border) ---- */
 .md-typeset .grid.cards > ul > li {
   border: 1px solid transparent;
@@ -80,3 +206,42 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18), 0 2px 4px rgba(0, 0, 0, 0.1);
   transform: translateY(-1px);
 }
+
+/* ---- Certification cards: image-forward layout ---- */
+.md-typeset .grid.cards.cert-cards > ul > li {
+  overflow: hidden;
+  padding: 0 0 1.2em;
+}
+
+.md-typeset .grid.cards.cert-cards > ul > li > p:first-child > a {
+  display: block;
+  margin: 0 0 1em;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.md-typeset .grid.cards.cert-cards > ul > li img {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.md-typeset .grid.cards.cert-cards > ul > li a:hover img {
+  transform: scale(1.02);
+}
+
+.md-typeset .grid.cards.cert-cards > ul > li > p:not(:first-child) {
+  margin: 0 1.2em;
+}
+
+.md-typeset .grid.cards.cert-cards > ul > li strong {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5em;
+}
+
+.md-typeset .grid.cards.cert-cards .cert-meta {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--md-default-fg-color--light);
+}
+

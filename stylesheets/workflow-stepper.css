@@ -1,0 +1,281 @@
+/* =========================================================================
+   Workflow Process Stepper
+   - Inherits ALL colors and fonts from the MkDocs Material theme variables,
+     so it follows your existing palette and light/dark toggle.
+   - No hex colors are used for theming; fallbacks only apply if a theme
+     variable is missing.
+   ========================================================================= */
+
+.wf-stepper {
+  /* ---- Color tokens: mapped to existing theme variables (do not hardcode) ---- */
+  --wf-bg:        var(--md-default-bg-color);
+  --wf-card-bg:   var(--md-code-bg-color);
+  --wf-border:    var(--md-default-fg-color--lightest);
+  --wf-line:      var(--md-default-fg-color--lighter);
+  --wf-text:      var(--md-default-fg-color);
+  --wf-muted:     var(--md-default-fg-color--light);
+  --wf-accent:    var(--md-accent-fg-color);
+  --wf-icon-bg:   var(--md-accent-fg-color--transparent);
+
+  /* ---- Geometry tokens ---- */
+  --wf-pad:   1.1rem;   /* card inner padding */
+  --wf-icon:  2rem;     /* icon box size */
+  --wf-gap:   1.75rem;  /* space between cards = connector length */
+  --wf-dot:   0.4rem;   /* travelling dot size */
+  /* vertical center of the icon box, measured from the card's outer edge */
+  --wf-anchor: calc(var(--wf-pad) + var(--wf-icon) / 2 + 1px);
+
+  position: relative;
+  margin: 1.5em 0;
+  padding: 1.25rem;
+  border: 1px solid var(--wf-border);
+  border-radius: 1rem;
+  background: var(--wf-bg);
+}
+
+/* ---------- Header row: intro text + play/pause button ---------- */
+.wf-stepper__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.md-typeset .wf-stepper__intro {
+  margin: 0;
+  color: var(--wf-muted);
+  font-size: 0.75rem;
+}
+
+.wf-play {
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--wf-border);
+  border-radius: 999px;
+  background: var(--wf-card-bg);
+  color: var(--wf-text);
+  font: inherit;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.wf-play:hover { border-color: var(--wf-accent); color: var(--wf-accent); }
+
+/* ---------- The row of steps ---------- */
+/* "ol.wf-steps" outranks Material's ".md-typeset ol:not([hidden])" list rule */
+.md-typeset ol.wf-steps {
+  display: flex;
+  align-items: flex-start;          /* an open card grows alone; siblings keep their height */
+  gap: var(--wf-gap);
+  margin: 0;
+  padding: 0 0 0.5rem;
+  list-style: none;
+  overflow-x: auto;                 /* narrow desktop/tablet: swipe instead of clipping */
+  scroll-snap-type: x proximity;
+}
+
+.md-typeset ol.wf-steps > li.wf-step {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 9.5rem;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+/* ---------- Card ---------- */
+.wf-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 12rem;                /* equal closed heights */
+  padding: var(--wf-pad);
+  border: 1px solid var(--wf-border);
+  border-radius: 0.8rem;
+  background: var(--wf-card-bg);
+  transition: border-color 0.25s ease;
+}
+
+.wf-step.is-open .wf-card { border-color: var(--wf-accent); }
+
+.wf-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.wf-card__icon {
+  display: grid;
+  place-items: center;
+  width: var(--wf-icon);
+  height: var(--wf-icon);
+  border: 1px solid var(--wf-border);
+  border-radius: 0.55rem;
+  background: var(--wf-icon-bg);
+  color: var(--wf-accent);
+}
+
+.wf-card__icon svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.wf-card__index {
+  font-family: var(--md-code-font-family);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--wf-accent);
+}
+
+.md-typeset .wf-card__title {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--wf-text);
+}
+
+/* ---------- "Details +" accordion trigger ---------- */
+.wf-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  align-self: flex-start;
+  margin-top: auto;                 /* pins the trigger to the card bottom */
+  padding: 1rem 0 0;
+  border: 0;
+  background: none;
+  color: var(--wf-muted);
+  font: inherit;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.wf-toggle:hover { color: var(--wf-accent); }
+
+.wf-toggle:focus-visible,
+.wf-play:focus-visible {
+  outline: 2px solid var(--wf-accent);
+  outline-offset: 3px;
+  border-radius: 0.25rem;
+}
+
+.wf-play:focus-visible { border-radius: 999px; }
+
+.wf-toggle__icon {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.wf-step.is-open .wf-toggle__icon { transform: rotate(45deg); }  /* + becomes × */
+
+/* ---------- Accordion panel: smooth height animation (0fr -> 1fr) ---------- */
+.wf-card__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.wf-step.is-open .wf-card__panel { grid-template-rows: 1fr; }
+
+.wf-card__panel-inner { overflow: hidden; min-height: 0; }
+
+.md-typeset .wf-card__panel-inner p {
+  margin: 0;
+  padding-top: 0.6rem;
+  color: var(--wf-muted);
+  font-size: 0.7rem;
+  line-height: 1.6;
+}
+
+/* ---------- Dotted connectors between cards ---------- */
+.wf-step:not(:last-child)::after {        /* the dotted line */
+  content: "";
+  position: absolute;
+  top: var(--wf-anchor);
+  left: 100%;
+  width: var(--wf-gap);
+  border-top: 2px dotted var(--wf-line);
+  pointer-events: none;
+}
+
+.wf-step:not(:last-child)::before {       /* the travelling dot */
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: calc(var(--wf-anchor) + 1px - var(--wf-dot) / 2);
+  left: 100%;
+  width: var(--wf-dot);
+  height: var(--wf-dot);
+  border-radius: 50%;
+  background: var(--wf-accent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.wf-stepper.is-playing .wf-step:not(:last-child)::before {
+  animation: wf-flow-x 2.4s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 0.45s);
+}
+
+@keyframes wf-flow-x {
+  0%   { transform: translateX(0); opacity: 0; }
+  15%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { transform: translateX(calc(var(--wf-gap) - var(--wf-dot))); opacity: 0; }
+}
+
+/* ---------- Mobile: vertical stacked list ---------- */
+@media screen and (max-width: 44.9375em) {
+  .wf-stepper { --wf-gap: 1.5rem; padding: 1rem; }
+
+  .md-typeset ol.wf-steps {
+    flex-direction: column;
+    align-items: stretch;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  .md-typeset ol.wf-steps > li.wf-step { min-width: 0; }
+
+  .wf-card { min-height: 0; }
+
+  .wf-step:not(:last-child)::after {
+    top: 100%;
+    left: calc(var(--wf-anchor) - 1px);
+    width: 0;
+    height: var(--wf-gap);
+    border-top: 0;
+    border-left: 2px dotted var(--wf-line);
+  }
+
+  .wf-step:not(:last-child)::before {
+    top: 100%;
+    left: calc(var(--wf-anchor) - var(--wf-dot) / 2);
+  }
+
+  .wf-stepper.is-playing .wf-step:not(:last-child)::before {
+    animation-name: wf-flow-y;
+  }
+}
+
+@keyframes wf-flow-y {
+  0%   { transform: translateY(0); opacity: 0; }
+  15%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { transform: translateY(calc(var(--wf-gap) - var(--wf-dot))); opacity: 0; }
+}
+
+/* ---------- Respect users who turn off motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .wf-stepper .wf-step::before { animation: none !important; opacity: 0 !important; }
+  .wf-card__panel,
+  .wf-toggle__icon,
+  .wf-card { transition: none; }
+}
