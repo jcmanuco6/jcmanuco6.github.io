@@ -33,6 +33,14 @@ hide:
 
     <span class="cert-meta">Kaggle · October 2026</span>
 
+-   <a href="../assets/img/certifications/Diploma_de_seguimiento_JMC.pdf" target="_blank">
+      <img src="../assets/img/certifications/cert-diploma.png" alt="Diploma de Seguimiento – Geoinformación aplicada al Patrimonio certificate" style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px 8px 0 0;">
+    </a>
+
+    **Diploma de Seguimiento — Geoinformación aplicada al Patrimonio**
+
+    <span class="cert-meta">Universidad Politécnica de Madrid · November 2026</span>
+
 </div>
 
 ## In Progress
