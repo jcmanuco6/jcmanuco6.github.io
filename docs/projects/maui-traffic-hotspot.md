@@ -9,9 +9,10 @@ hide:
 
 # Maui Commute Traffic Hotspot Analyzer
 
-<p class="project-subtitle">A zero-cost spatial pipeline that fuses TomTom traffic flow data with OpenStreetMap road networks to flag the worst AM spillback intersections on Maui's Kula → Kahului commute.</p>
+<p class="project-subtitle"><strong>Independent Case Study.</strong> A zero-cost spatial pipeline that fuses TomTom traffic flow data with OpenStreetMap road networks to flag the worst AM spillback intersections on Maui's Kula → Kahului commute.</p>
 
 <ul class="chips">
+<li>Independent Project</li>
 <li>Python</li>
 <li>OSMnx</li>
 <li>TomTom Flow API</li>

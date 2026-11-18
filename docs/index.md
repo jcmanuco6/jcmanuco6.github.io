@@ -9,14 +9,14 @@ hide:
 <div class="hero-background-graphic" aria-hidden="true"></div>
 <div class="hero-content" markdown>
 
-<p class="hero-eyebrow">GIS Analyst · Maui, Hawaiʻi</p>
+<p class="hero-eyebrow">Geospatial Data Engineer</p>
 
 <h1 class="hero-title">Mapping complex data<br>into <em>clear solutions.</em></h1>
 
 <p class="hero-intro">Designing automated pipelines that bridge spatial databases, ETL, and spatial infrastructure to turn complex data into reliable visual information.</p>
 
 [Explore my work →](#projects){ .md-button .md-button--primary .hero-cta }
-[Resume](cv/Joan_Colon_CV_MM11.pdf){ .md-button .hero-cta }
+[Resume](cv/Joan_Colon_CV_MM11_RE.pdf){ .md-button .hero-cta }
 
 </div>
 </div>
