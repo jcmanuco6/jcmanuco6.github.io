@@ -20,3 +20,11 @@ cesium-bootcamp-session1/
 
 # Scratch audit output, not portfolio content
 audit-report.txt
+
+# Internal planning / AI workflow files (kept locally, untracked)
+CLAUDE.md
+NEXT_STEPS.md
+PLAN.md
+STATUS.md
+.claudeignore
+drafts/
