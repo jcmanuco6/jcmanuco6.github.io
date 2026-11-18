@@ -28,3 +28,6 @@ PLAN.md
 STATUS.md
 .claudeignore
 drafts/
+
+# Local-only backup of old developer README
+README_bckup.md
