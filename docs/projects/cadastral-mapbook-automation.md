@@ -25,7 +25,6 @@ hide:
 <a href="#overview">Overview</a>
 <a href="#workflow">Workflow</a>
 <a href="#tools-technologies">Tools &amp; Technologies</a>
-<a href="#status-next-steps">Status &amp; Next Steps</a>
 </nav>
 
 <div class="case-section" markdown>
@@ -118,15 +117,5 @@ Producing parcel map sheets by hand in ArcGIS Pro is slow and hard to repeat: ea
 - **Conda** — isolated environment (`prod-map-cadas-env`)
 - **Parquet** — compact, fast storage for the parcel fabric
 
-</div>
-
-<div class="case-section" markdown>
-
-## Status & Next Steps
-
-**Status:** In progress (last updated 2026-10-12).
-
-- Finish the cartographic QC of all layer components.
-- Move the layout to a **web print template** so map sheets can be produced from the browser.
 
 </div>
