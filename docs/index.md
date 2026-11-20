@@ -9,11 +9,11 @@ hide:
 <div class="hero-background-graphic" aria-hidden="true"></div>
 <div class="hero-content" markdown>
 
-<p class="hero-eyebrow">Geospatial Data Engineer</p>
+<p class="hero-eyebrow">GEOSPATIAL & DATA SPECIALIST · MAUI, HAWAII</p>
 
 <h1 class="hero-title">Mapping complex data<br>into <em>clear solutions.</em></h1>
 
-<p class="hero-intro">Designing automated pipelines that bridge spatial databases, ETL, and spatial infrastructure to turn complex data into reliable visual information.</p>
+<p class="hero-intro">Building automated pipelines, scalable databases, and 3D web tools to make complex spatial data work.</p>
 
 [Explore my work →](#projects){ .md-button .md-button--primary .hero-cta }
 [Resume](cv/Joan_Colon_CV_MM11_RE.pdf){ .md-button .hero-cta }
@@ -23,7 +23,7 @@ hide:
 
 ## About { #about .section }
 
-I specialize in spatial data engineering—building robust ETL workflows and scalable spatial database architecture that convert complex, raw data into clear, reliable operational tools.
+I am a **Geospatial Data Specialist** with a track record of deploying scalable solutions across environmental, public-sector, and scientific research domains. I build the systems that keep spatial data clean, connected, and useful.
 
 ## Projects { #projects .section }
 
