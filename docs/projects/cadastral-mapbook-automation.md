@@ -5,7 +5,7 @@ hide:
 
 <div class="project-hero" markdown>
 
-![Parcel tax map sheet generated from the mapbook template](../assets/img/POC-cadastral-automation-maps-new-v02.png)
+![Parcel tax map sheet generated from the mapbook template](../assets/img/POC-cadastral-automation-maps-new-v03.png)
 
 # Cadastral Mapping Automation Guide (POC)
 
