@@ -50,6 +50,7 @@ nav:
       - Maui Commute Traffic Hotspot Analyzer: projects/maui-traffic-hotspot.md
       - CRIM Cadastral Portal: projects/crim-cadastral-portal.md
       - Reality Capture Workflow: projects/reality-capture.md
+      - Wetlands Dataset Optimization & Web Publishing: projects/wetlands-optimization.md
   - Demos:
       - CesiumJS Bootcamp Viewer: demos/cesium-session1/index.html
   - Resume: cv/Joan_Colon_CV_MM11_RE.pdf

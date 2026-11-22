@@ -77,6 +77,16 @@ I am a **Geospatial Data Specialist** with a track record of deploying scalable 
 
     [:octicons-arrow-right-24: Case study](projects/reality-capture.md)
 
+-   :material-water-outline:{ .lg .middle } **Wetlands Dataset Optimization & Web Publishing**
+
+    ---
+
+    GDB &rarr; GeoPackage, tiled, masked and simplified with PostGIS and
+    GDAL, then published to ArcGIS Online and GeoServer with full
+    attribute integrity.
+
+    [:octicons-arrow-right-24: Case study](projects/wetlands-optimization.md)
+
 </div>
 
 ## Skills { #skills .section }
